@@ -4,18 +4,18 @@ import Header from "../../../components/header/Header";
 import Footer from "../../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 const GetinTouch = () => {
- const [formData, setFormData] = useState({
-    lastName: "",              
-    businessEmail: "",        
-    companyName: "",          
-    designation: "",           
-    organisationSize: "",     
+  const [formData, setFormData] = useState({
+    lastName: "",
+    businessEmail: "",
+    companyName: "",
+    designation: "",
+    organisationSize: "",
     businessObjective: "",
     primaryTech: "",
-    techStack: [],             
-    transformationBudget: "", 
-    message: "",               
-    phone: "+61 ",               
+    techStack: [],
+    transformationBudget: "",
+    message: "",
+    phone: "+61 ",
   });
   const [showThankYou, setShowThankYou] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,9 +27,9 @@ const GetinTouch = () => {
       // Handle the Technology Stack array
       setFormData((prev) => {
         const currentStack = prev.techStack || [];
-        const newStack = checked 
+        const newStack = checked
           ? [...currentStack, value] // Add if checked
-          : currentStack.filter((item) => item !== value); 
+          : currentStack.filter((item) => item !== value);
         return { ...prev, techStack: newStack };
       });
     } else {
@@ -106,7 +106,7 @@ const GetinTouch = () => {
   //     setIsSubmitting(false);
   //   }
   // };
- const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -117,26 +117,28 @@ const GetinTouch = () => {
       form.acceptCharset = "UTF-8";
 
       const fields = {
-        xnQsjsdp: "af3cd41b6fd1aa90e4cec5492096c20a4411ab7cf9ab23d4f6ae4a8643797cd9",
-        xmIwtLD: "1b4554fa9405e9208d337cd1c20b7f3adfb42ead74dc2ee63873bdc69ba330e92386b33d783c8612d3e84405828f035f",
+        xnQsjsdp:
+          "af3cd41b6fd1aa90e4cec5492096c20a4411ab7cf9ab23d4f6ae4a8643797cd9",
+        xmIwtLD:
+          "1b4554fa9405e9208d337cd1c20b7f3adfb42ead74dc2ee63873bdc69ba330e92386b33d783c8612d3e84405828f035f",
         actionType: "TGVhZHM=",
         returnURL: "https://infogenx.com/contact-us",
 
         // ✅ Only default Zoho fields
         "Last Name": formData.lastName,
-        "Email": formData.businessEmail,
-        "Company": formData.companyName,
-        "Phone": formData.phone,
+        Email: formData.businessEmail,
+        Company: formData.companyName,
+        Phone: formData.phone,
 
         // ✅ Put EVERYTHING else inside Description
-        "Description": `
+        Description: `
       Designation: ${formData.designation}
       Organisation Size: ${formData.organisationSize}
       Primary Objective: ${formData.businessObjective}
       Budget: ${formData.transformationBudget}
       Ecosystem: ${formData.techStack.join(", ")}
       Challenge: ${formData.message}
-      `
+      `,
       };
 
       Object.entries(fields).forEach(([name, value]) => {
@@ -158,11 +160,11 @@ const GetinTouch = () => {
         lastName: "",
         businessEmail: "",
         companyName: "",
-        designation: "",          
+        designation: "",
         organisationSize: "",
         businessObjective: "",
-        primaryTech: "",          
-        techStack: [],            
+        primaryTech: "",
+        techStack: [],
         transformationBudget: "",
         message: "",
         phone: "",
@@ -190,8 +192,8 @@ const GetinTouch = () => {
       </Helmet>
       <Header />
       <div className="page-intro-header container">
-       <style>
-    {`
+        <style>
+          {`
       div.page-intro-header.container h1.main-headline {
         font-size: 28px !important;
       }
@@ -201,172 +203,184 @@ const GetinTouch = () => {
         }
       }
     `}
-  </style>
-   <h1 className="main-headline">
-  ORCHESTRATE GROWTH:STRATEGIC AI INTEGRATION FOR MODERN ECOSYSTEMS
-</h1>
-    <p className="intro-subtext">Partner with Infogenx to architect high-yield, AI-integrated 
-      roadmaps across Microsoft, Zoho, and Global SaaS ecosystems. Tailored for leaders in Australia and India looking to optimize capital, eliminate operational silos, and capture dominant market share</p>
-  </div>
-      <div className="quote-main-layout"> 
+        </style>
+        <h1 className="main-headline">
+          ORCHESTRATE GROWTH:STRATEGIC AI INTEGRATION FOR MODERN ECOSYSTEMS
+        </h1>
+        <p className="intro-subtext">
+          Partner with Infogenx to architect high-yield, AI-integrated roadmaps
+          across Microsoft, Zoho, and Global SaaS ecosystems. Tailored for
+          leaders in Australia and India looking to optimize capital, eliminate
+          operational silos, and capture dominant market share
+        </p>
+      </div>
+      <div className="quote-main-layout">
         <div className="contact-form-container">
-        <h2 className="contact-title">
-  REQUEST A CONFIDENTIAL STRATEGY BRIEFING
-</h2>
+          <h2 className="contact-title">
+            REQUEST A CONFIDENTIAL STRATEGY BRIEFING
+          </h2>
           {!showThankYou ? (
             <div className="contact-form-wrapper">
-             <form className="contact-form" onSubmit={handleSubmit}>
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-row">
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Full Name *"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                  />
+                  <div className="phone-input-wrapper">
+                    <img
+                      src="https://flagcdn.com/w40/au.png"
+                      alt="Australia Flag"
+                      className="flag-icon"
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number *"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    name="companyName"
+                    placeholder="Company Name *"
+                    value={formData.companyName}
+                    onChange={handleChange}
+                    required
+                  />
 
- <div className="form-row">
+                  <input
+                    type="email"
+                    name="businessEmail"
+                    placeholder="Business Email *"
+                    value={formData.businessEmail}
+                    onChange={handleChange}
+                    required
+                  />
 
-  <input
-    type="text"
-    name="lastName"
-    placeholder="Full Name *"
-    value={formData.lastName}
-    onChange={handleChange}
-    required
-  />
-<div className="phone-input-wrapper">
-    <img 
-      src="https://flagcdn.com/w40/au.png" 
-      alt="Australia Flag" 
-      className="flag-icon" 
-    />
-    <input
-      type="tel"
-      name="phone"
-      placeholder="Phone Number *"
-      value={formData.phone}
-      onChange={handleChange}
-      required
-    />
-  </div>
-  <input
-    type="text"
-    name="companyName"
-    placeholder="Company Name *"
-    value={formData.companyName}
-    onChange={handleChange}
-    required
-  />
+                  <select
+                    name="organisationSize"
+                    value={formData.organisationSize}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Organisation Size *</option>
+                    <option value="1-10">1–10</option>
+                    <option value="10-50">10–50</option>
+                    <option value="50-200">50–200</option>
+                    <option value="200-1000">200–1000</option>
+                    <option value="1000+">1000+</option>
+                  </select>
 
-  <input
-    type="email"
-    name="businessEmail"
-    placeholder="Business Email *"
-    value={formData.businessEmail}
-    onChange={handleChange}
-    required
-  />
+                  <select
+                    name="designation"
+                    value={formData.designation}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Designation / Role *</option>
+                    <option value="CEO">CEO</option>
+                    <option value="COO">COO</option>
+                    <option value="CIO">CIO</option>
+                    <option value="Director">Director</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div className="tech-split-section">
+                  <div className="objective-budget-wrapper">
+                    <select
+                      name="businessObjective"
+                      value={formData.businessObjective}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Primary Business Objective *</option>
+                      <option value="Operational Efficiency">
+                        Operational Efficiency
+                      </option>
+                      <option value="Revenue Growth">Revenue Growth</option>
+                      <option value="Cost Optimisation">
+                        Cost Optimisation
+                      </option>
+                      <option value="AI Adoption">AI Adoption</option>
+                      <option value="System Consolidation">
+                        System Consolidation
+                      </option>
+                    </select>
 
-  <select
-    name="organisationSize"
-    value={formData.organisationSize}
-    onChange={handleChange}
-    required
-  >
-    <option value="">Organisation Size *</option>
-    <option value="1-10">1–10</option>
-    <option value="10-50">10–50</option>
-    <option value="50-200">50–200</option>
-    <option value="200-1000">200–1000</option>
-    <option value="1000+">1000+</option>
-  </select>
+                    <select
+                      name="transformationBudget"
+                      value={formData.transformationBudget}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">
+                        Estimated Transformation Budget (AUD) *
+                      </option>
+                      <option value="Under $100k">Under $100k</option>
+                      <option value="$100k-$250k">$100k – $250k</option>
+                      <option value="$250k-$500k">$250k – $500k</option>
+                      <option value="$500k+">$500k+</option>
+                    </select>
+                  </div>
+                  <div className="tech-stack-container">
+                    <label>
+                      Current Technology Stack (Select all that apply) *
+                    </label>
 
-  <select
-    name="designation"
-    value={formData.designation}
-    onChange={handleChange}
-    required
-  >
-    <option value="">Designation / Role *</option>
-    <option value="CEO">CEO</option>
-    <option value="COO">COO</option>
-    <option value="CIO">CIO</option>
-    <option value="Director">Director</option>
-    <option value="Other">Other</option>
-  </select>
-               </div>
-   <div className="tech-split-section">
-     <div className="objective-budget-wrapper">
-            <select
-              name="businessObjective"
-              value={formData.businessObjective}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Primary Business Objective *</option>
-              <option value="Operational Efficiency">Operational Efficiency</option>
-              <option value="Revenue Growth">Revenue Growth</option>
-              <option value="Cost Optimisation">Cost Optimisation</option>
-              <option value="AI Adoption">AI Adoption</option>
-              <option value="System Consolidation">System Consolidation</option>
-            </select>
+                    <div className="tech-layout-wrapper">
+                      <div className="checkbox-grid">
+                        {[
+                          "Microsoft",
+                          "Shopify",
+                          "Other",
+                          "Zoho",
+                          "Odoo",
+                          "Manual/Excel",
+                          "Salesforce",
+                          "HubSpot",
+                          "Xero",
+                        ].map((tech) => (
+                          <label key={tech} className="checkbox-label">
+                            <input
+                              type="checkbox"
+                              name="techStack"
+                              value={tech}
+                              onChange={handleChange}
+                              checked={formData.techStack.includes(tech)}
+                            />
+                            {tech}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Message - Full Width */}
+                <textarea
+                  rows="4"
+                  name="message"
+                  placeholder="Describe your current transformation challenge *"
+                  className="full-width"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
 
-            <select
-              name="transformationBudget"
-              value={formData.transformationBudget}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Estimated Transformation Budget (AUD) *</option>
-              <option value="Under $100k">Under $100k</option>
-              <option value="$100k-$250k">$100k – $250k</option>
-              <option value="$250k-$500k">$250k – $500k</option>
-              <option value="$500k+">$500k+</option>
-            </select>
-          </div>
-  <div className="tech-stack-container">
-    <label>Current Technology Stack (Select all that apply) *</label>
-
-    <div className="tech-layout-wrapper">
-      <div className="checkbox-grid">
-        {[
-          "Microsoft",
-          "Shopify",
-          "Other",
-          "Zoho",
-          "Odoo",
-          "Manual/Excel",
-          "Salesforce",
-          "HubSpot",
-          "Xero"
-        ].map((tech) => (
-          <label key={tech} className="checkbox-label">
-            <input
-              type="checkbox"
-              name="techStack"
-              value={tech}
-              onChange={handleChange}
-              checked={formData.techStack.includes(tech)}
-            />
-            {tech}
-          </label>
-        ))}
-      </div>
-    </div>
-  </div>
-               </div>     
-  {/* Message - Full Width */}
-  <textarea
-    rows="4"
-    name="message"
-    placeholder="Describe your current transformation challenge *"
-    className="full-width"
-    value={formData.message}
-    onChange={handleChange}
-    required
-  />
-
-  <button type="submit" className="submit-btn" disabled={isSubmitting}>
-    {isSubmitting ? "Processing..." : "REQUEST STRATEGY BRIEFING"}
-  </button>
-
-  
-
-</form>
-
+                <button
+                  type="submit"
+                  className="submit-btn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Processing..." : "REQUEST STRATEGY BRIEFING"}
+                </button>
+              </form>
             </div>
           ) : (
             <div className="thank-you-message">
@@ -381,85 +395,152 @@ const GetinTouch = () => {
             </div>
           )}
         </div>
-       {/* COLUMN 3 (Right): Fast Facts & AI Insights */}
-          <div className="side-content right-facts">
-            <div className="fact-card">
-              <h4>Fast Facts</h4>
-              
+        {/* COLUMN 3 (Right): Fast Facts & AI Insights */}
+        <div className="side-content right-facts">
+          <div className="fact-card">
+            <h4>Fast Facts</h4>
 
-  <p className="mini-heading">Why Leaders Engage Us</p>
+            <p className="mini-heading">Why Leaders Engage Us</p>
 
-  
-              <ul>
-                <li><strong>Cross-Border Capability:</strong> Integrated delivery teams across Australia and India ensuring 24/7 operational continuity.</li>
-                <li><strong>High-Yield Architecture:</strong> Specializing in $100k–$500k+ enterprise transformations that prioritize ROI over simple automation.</li>
-                <li><strong>Ecosystem Neutrality:</strong> Expert-level integration across Microsoft, Zoho, Shopify, and Odoo to eliminate data silos.</li>
-              </ul>
-            </div>
-
-           <div className="did-you-know-card">
-            <h4>Did you know?</h4>
-            <p>Enterprises that fail to integrate AI... face a 30% higher cost-of-capital...</p>
-            <p className="highlight-text">We don't just automate tasks; we optimize your valuation.</p>
+            <ul>
+              <li>
+                <strong>Cross-Border Capability:</strong> Integrated delivery
+                teams across Australia and India ensuring 24/7 operational
+                continuity.
+              </li>
+              <li>
+                <strong>High-Yield Architecture:</strong> Specializing in
+                $100k–$500k+ enterprise transformations that prioritize ROI over
+                simple automation.
+              </li>
+              <li>
+                <strong>Ecosystem Neutrality:</strong> Expert-level integration
+                across Microsoft, Zoho, Shopify, and Odoo to eliminate data
+                silos.
+              </li>
+            </ul>
           </div>
-            <div className="nda-shield-box">
-      <span className="shield-icon">🛡️</span>
-      <p>All strategy briefings are conducted under strict NDA protocols.</p>
-   </div>
-        </div> {/* Closing side-content */}
-      </div> {/* Closing quote-main-layout - THIS WAS LIKELY MISSING OR MISPLACED */}
-<div className="global-delivery-section">
-        
+
+          <div className="did-you-know-card">
+            <h4>Did you know?</h4>
+            <p>
+              Enterprises that fail to integrate AI... face a 30% higher
+              cost-of-capital...
+            </p>
+            <p className="highlight-text">
+              We don't just automate tasks; we optimize your valuation.
+            </p>
+          </div>
+          <div className="nda-shield-box">
+            <span className="shield-icon">🛡️</span>
+            <p>
+              All strategy briefings are conducted under strict NDA protocols.
+            </p>
+          </div>
+        </div>{" "}
+        {/* Closing side-content */}
+      </div>{" "}
+      {/* Closing quote-main-layout - THIS WAS LIKELY MISSING OR MISPLACED */}
+      {/*Locatios */}
+      <div className="global-locations-container">
+        <h2>Global Locations</h2>
+        <div className="global-locations">
+          <div className="location-box">
+            <h3>India Office</h3>
+            <p>
+              SPACES OLYMPIA, 10TH FLOOR, CITIUS A BLOCK, PHASE 1, PLOT NO. 1,
+              SIDCO INDUSTRIAL ESTATE, Guindy, Chennai, Tamil Nadu 600032
+            </p>
+          </div>
+
+          <div className="location-box">
+            <h3>Australia Office</h3>
+            <p>
+              17 View Street, Mount Gravatt East, Brisbane, Queensland, Upper
+              Mount Gravatt QLD 4122, Australia
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="global-delivery-section">
         {/* 1. Background Map */}
-        <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg" 
-          alt="Global Delivery Map" 
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg"
+          alt="Global Delivery Map"
           className="global-map-bg"
         />
 
-    <svg className="map-connection-svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
-    <defs>
-        <filter id="glow-effect" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
-        
-        {/* Arrowhead Marker Definition */}
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#F36B2A" />
-        </marker>
-    </defs>
-    
-    {/* 🔥 PATH: Adjusted up and left to hit the Indian landmass (Chennai) */}
-    <path 
-        d="M 690 205 Q 760 250, 860 360" 
-        stroke="#F36B2A" 
-        strokeWidth="2" 
-        fill="none"
-        strokeDasharray="6,6"
-        strokeLinecap="round"
-        opacity="0.8"
-        markerEnd="url(#arrowhead)" 
-    />
-    
-    {/* 🔴 Dot: Moved to X=690, Y=205 (Chennai, India) */}
-    <circle cx="690" cy="205" r="5" fill="#F36B2A" filter="url(#glow-effect)" />
-</svg>
+        <svg
+          className="map-connection-svg"
+          viewBox="0 0 1000 500"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <filter
+              id="glow-effect"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+            >
+              <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            {/* Arrowhead Marker Definition */}
+            <marker
+              id="arrowhead"
+              markerWidth="10"
+              markerHeight="7"
+              refX="8"
+              refY="3.5"
+              orient="auto"
+            >
+              <polygon points="0 0, 10 3.5, 0 7" fill="#F36B2A" />
+            </marker>
+          </defs>
+
+          {/* 🔥 PATH: Adjusted up and left to hit the Indian landmass (Chennai) */}
+          <path
+            d="M 690 205 Q 760 250, 860 360"
+            stroke="#F36B2A"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="6,6"
+            strokeLinecap="round"
+            opacity="0.8"
+            markerEnd="url(#arrowhead)"
+          />
+
+          {/* 🔴 Dot: Moved to X=690, Y=205 (Chennai, India) */}
+          <circle
+            cx="690"
+            cy="205"
+            r="5"
+            fill="#F36B2A"
+            filter="url(#glow-effect)"
+          />
+        </svg>
         {/* 3. Text Content */}
         <div className="global-content">
-          <h2 className="global-title">GLOBAL DELIVERY. LOCAL ACCOUNTABILITY.</h2>
-          <p className="global-subtitle">Seamless integration across borders.</p>
+          <h2 className="global-title">
+            GLOBAL DELIVERY. LOCAL ACCOUNTABILITY.
+          </h2>
+          <p className="global-subtitle">
+            Seamless integration across borders.
+          </p>
 
           <div className="insight-box">
             {/* Opening Quote */}
             <span className="quote-icon-left">“</span>
-            
+
             <h5>AI COST-OF-CAPITAL INSIGHT BLOCK</h5>
             <p>
-              Enterprises that fail to integrate AI by 2026 face 30% higher cost-of-capital.
+              Enterprises that fail to integrate AI by 2026 face 30% higher
+              cost-of-capital.
               <br />
               <span style={{ color: "#F36B2A", fontWeight: "700" }}>
                 We don't just automate tasks, we optimize your valuation.
