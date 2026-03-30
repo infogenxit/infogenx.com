@@ -1257,3 +1257,9 @@ body .contact-form-container .contact-form textarea {
     margin-right: 12px;
     flex-shrink: 0;
 }
+
+.location-box-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
