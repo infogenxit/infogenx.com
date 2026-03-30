@@ -3,6 +3,8 @@ import "./GetinTouchNew.css";
 import Header from "../../../components/header/Header";
 import Footer from "../../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
+import indiaFlag from "../../../assets/images/india-flag.png";
+import australiaFlag from "../../../assets/images/australia-flags.png";  
 const GetinTouch = () => {
   const [formData, setFormData] = useState({
     lastName: "",
@@ -448,14 +450,16 @@ const GetinTouch = () => {
           <div className="location-box">
             <h3>India Office</h3>
             <p>
-              SPACES OLYMPIA, 10TH FLOOR, CITIUS A BLOCK, PHASE 1, PLOT NO. 1,
-              SIDCO INDUSTRIAL ESTATE, Guindy, Chennai, Tamil Nadu 600032
+            <img src={indiaFlag} alt="India Flag" className="flag-icon" />
+            Spaces Olympia, 10th Floor, Citius A Block, Phase 1, Plot No. 1,
+            Sidco Industrial Estate, Guindy, Chennai, Tamil Nadu 600032
             </p>
           </div>
 
           <div className="location-box">
             <h3>Australia Office</h3>
             <p>
+            <img src={australiaFlag} alt="Australia Flag" className="flag-icon" />
               17 View Street, Mount Gravatt East, Brisbane, Queensland, Upper
               Mount Gravatt QLD 4122, Australia
             </p>
