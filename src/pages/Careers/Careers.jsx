@@ -6,14 +6,14 @@ const Career = () => {
   return (
     <div>
       <Helmet>
-        <title>Careers at Infogenx | Jobs & Opportunities at Infogenx</title>
+        <title>Careers at Infogenx | Join Our Tech Team</title>
         <meta
           name="description"
-          content="Explore career opportunities at Infogenx. Join our team of developers, designers, and digital experts to build innovative web and software solutions."
+          content="Explore career opportunities at Infogenx and work on AI, automation, and software development projects with a global team."
         />
         <meta
           name="keywords"
-          content="Infogenx careers, web development jobs, software company jobs, IT jobs India, React developer jobs"
+          content="Infogenx careers, IT jobs, software jobs, AI jobs, tech careers"
         />
       </Helmet>
       <Header />

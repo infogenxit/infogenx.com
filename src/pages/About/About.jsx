@@ -10,15 +10,15 @@ const About = () => {
     <>
       <Helmet>
         <title>
-          About Infogenx | Australian IT Consulting & Engineering Firm
+        About Infogenx | AI & Software Development Experts
         </title>
         <meta
           name="description"
-          content="Learn about Infogenx—our story, leadership, partnerships, and mission to deliver intelligent, outcome-driven digital solutions for businesses."
+          content="Learn how Infogenx delivers AI, automation, and software solutions to help businesses innovate, scale, and succeed globally."
         />
         <meta
           name="keywords"
-          content="about Infogenx, Australian IT consulting company, digital engineering firm"
+          content="software development company, AI company, IT consulting, tech company, digital transformation partner"
         />
       </Helmet>
       <Header />
