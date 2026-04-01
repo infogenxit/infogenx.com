@@ -111,6 +111,7 @@ const GetinTouch = () => {
   //     setIsSubmitting(false);
   //   }
   // };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);

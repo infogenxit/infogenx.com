@@ -10,16 +10,14 @@ const ApplicationDev = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Managed IT Services & Ongoing Support | Infogenx Australia
-        </title>
+        <title>Managed IT Services for Growing Businesses | Infogenx</title>
         <meta
           name="description"
-          content="Ensure performance, security, and reliability with Infogenx’s managed services, proactive monitoring, and SLA-driven IT support."
+          content="Outsource your IT operations to Infogenx. We handle monitoring, maintenance, and support so your systems stay secure, scalable, and always running."
         />
         <meta
           name="keywords"
-          content="managed IT services Australia, IT support and maintenance"
+          content="managed IT services India, managed services provider India, outsourced IT management, cloud managed services, IT operations support, proactive IT monitoring"
         />
       </Helmet>
       <Header />

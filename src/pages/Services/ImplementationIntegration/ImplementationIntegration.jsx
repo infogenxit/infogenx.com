@@ -10,14 +10,14 @@ const ApplicationDev = () => {
   return (
     <>
       <Helmet>
-        <title>Technology Implementation & System Integration | Infogenx</title>
+        <title>Implementation & Integration Services | Infogenx</title>
         <meta
           name="description"
-          content="Infogenx provides end-to-end technology implementation and integration services to ensure reliable deployment and seamless platform connectivity."
+          content="Seamlessly implement and integrate your systems with Infogenx. We connect apps, automate workflows, and ensure smooth data flow across your business."
         />
         <meta
           name="keywords"
-          content="system implementation services, platform integration Australia"
+          content="software implementation and integration services, ERP implementation India, system integration services, API integration consulting, enterprise software integration, IT implementation partner"
         />
       </Helmet>
       <Header />

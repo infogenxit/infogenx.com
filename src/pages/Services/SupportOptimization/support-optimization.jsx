@@ -10,14 +10,14 @@ const ApplicationDev = () => {
   return (
     <>
       <Helmet>
-        <title>IT Support & Continuous Optimization Services | Infogenx</title>
+        <title>IT Support & System Optimization Services | Infogenx</title>
         <meta
           name="description"
-          content="Infogenx helps businesses resolve issues faster and continuously optimise systems through structured support and performance reporting."
+          content="Keep your systems running at peak performance with Infogenx support and optimization services. Improve speed, security, and reliability as you grow."
         />
         <meta
           name="keywords"
-          content="IT support Australia, system optimisation, performance monitoring"
+          content="IT support and optimization services, application support services India, software performance optimization, ongoing IT support, system maintenance services, managed IT support"
         />
       </Helmet>
       <Header />

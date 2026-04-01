@@ -11,15 +11,15 @@ const ApplicationDev = () => {
     <>
       <Helmet>
         <title>
-          IT Consulting & Technology Advisory Services | Infogenx Australia
+          IT Consulting & Advisory Services for Businesses | Infogenx
         </title>
         <meta
           name="description"
-          content="Make confident AI-Enabled Business Solutions decisions with Infogenx’s consulting and advisory services focused on strategy, planning, and business alignment."
+          content="Get expert IT consulting from Infogenx. We help you plan the right technology strategy, reduce risks, and build a clear roadmap for business growth."
         />
         <meta
           name="keywords"
-          content="AI & Automation Consulting Australia, technology advisory, digital strategy consulting"
+          content="IT consulting and advisory services India, technology strategy consulting, digital advisory services, business technology roadmap, IT consultant India, CTO advisory services"
         />
       </Helmet>
       <Header />
