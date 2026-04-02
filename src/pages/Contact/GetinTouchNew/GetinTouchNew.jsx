@@ -111,78 +111,119 @@ const GetinTouch = () => {
   //     setIsSubmitting(false);
   //   }
   // };
-  
+  //Zoho form submission previous code
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+
+  //   try {
+  //     const form = document.createElement("form");
+  //     form.method = "POST";
+  //     form.action = "https://forms.zohopublic.in/infogenx1/form/LeadCapture/formperma/CcIH7B-_oYaljs3VNp0Ys4XIscoeYjf8-kybAtqQ_gY/htmlRecords/submit";
+  //     form.acceptCharset = "UTF-8";
+
+  //     const fields = {
+  //       xnQsjsdp:
+  //         "af3cd41b6fd1aa90e4cec5492096c20a4411ab7cf9ab23d4f6ae4a8643797cd9",
+  //       xmIwtLD:
+  //         "1b4554fa9405e9208d337cd1c20b7f3adfb42ead74dc2ee63873bdc69ba330e92386b33d783c8612d3e84405828f035f",
+  //       actionType: "TGVhZHM=",
+  //       // returnURL: "https://infogenx.com/contact-us",
+  //       //localhost
+  //       returnURL: "http://localhost:3000/contact-us",
+  //     };
+
+  //     Object.entries(fields).forEach(([name, value]) => {
+  //       const input = document.createElement("input");
+  //       input.type = "hidden";
+  //       input.name = name;
+  //       input.value = value;
+  //       form.appendChild(input);
+  //     });
+
+  //     document.body.appendChild(form);
+  //     form.submit();
+
+  //     // Show thank you message
+  //     // setShowThankYou(true);
+
+  //     // Reset form state correctly
+  //     setFormData({
+  //       lastName: "",
+  //       businessEmail: "",
+  //       companyName: "",
+  //       designation: "",
+  //       organisationSize: "",
+  //       businessObjective: "",
+  //       primaryTech: "",
+  //       techStack: [],
+  //       transformationBudget: "",
+  //       message: "",
+  //       phone: "",
+  //     });
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //     alert("An error occurred. Please try again.");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+
+
+  //Zoho form submission new code
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     try {
       const form = document.createElement("form");
       form.method = "POST";
-      form.action = "https://crm.zoho.com/crm/WebToLeadForm";
-      form.acceptCharset = "UTF-8";
-
-      const fields = {
-        xnQsjsdp:
-          "af3cd41b6fd1aa90e4cec5492096c20a4411ab7cf9ab23d4f6ae4a8643797cd9",
-        xmIwtLD:
-          "1b4554fa9405e9208d337cd1c20b7f3adfb42ead74dc2ee63873bdc69ba330e92386b33d783c8612d3e84405828f035f",
-        actionType: "TGVhZHM=",
-        returnURL: "https://infogenx.com/contact-us",
-
-        // ✅ Only default Zoho fields
-        "Last Name": formData.lastName,
-        Email: formData.businessEmail,
-        Company: formData.companyName,
-        Phone: formData.phone,
-
-        // ✅ Put EVERYTHING else inside Description
-        Description: `
-      Designation: ${formData.designation}
-      Organisation Size: ${formData.organisationSize}
-      Primary Objective: ${formData.businessObjective}
-      Budget: ${formData.transformationBudget}
-      Ecosystem: ${formData.techStack.join(", ")}
-      Challenge: ${formData.message}
-      `,
-      };
-
-      Object.entries(fields).forEach(([name, value]) => {
+      form.action =
+        "https://forms.zohopublic.in/infogenx1/form/LeadCapture/formperma/XMx0IxKOfb-jzTS5sYys24DSyw1QMOeIwm-4IXybPtI/htmlRecords/submit";
+  
+      const addField = (name, value) => {
         const input = document.createElement("input");
         input.type = "hidden";
         input.name = name;
-        input.value = value;
+        input.value = value || "";
         form.appendChild(input);
-      });
-
+      };
+  
+      // ✅ NAME FIX (important)
+      const fullName = formData.lastName.trim();
+      let firstName = "User";
+      let lastName = "User";
+  
+      if (fullName) {
+        const parts = fullName.split(/\s+/);
+        firstName = parts[0];
+        lastName = parts.length > 1 ? parts.slice(1).join(" ") : parts[0];
+      }
+  
+      addField("Name_First", firstName);
+      addField("Name_Last", lastName);
+  
+      // ✅ CORRECT FIELD NAMES
+      addField("SingleLine", formData.companyName);
+      addField("Email", formData.businessEmail);
+      addField("MultiLine", formData.message);
+  
+      // ✅ PHONE (Zoho only expects this ONE field in your form)
+      addField("PhoneNumber_countrycode", formData.phone);
+  
+      // ✅ REDIRECT
+      addField("zf_redirect_url", "https://infogenx.com/");
+  
       document.body.appendChild(form);
       form.submit();
-
-      // Show thank you message
-      setShowThankYou(true);
-
-      // Reset form state correctly
-      setFormData({
-        lastName: "",
-        businessEmail: "",
-        companyName: "",
-        designation: "",
-        organisationSize: "",
-        businessObjective: "",
-        primaryTech: "",
-        techStack: [],
-        transformationBudget: "",
-        message: "",
-        phone: "",
-      });
+  
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred. Please try again.");
+      console.error(error);
+      alert("Submission failed");
     } finally {
       setIsSubmitting(false);
     }
   };
-
   return (
     <>
       <Helmet>

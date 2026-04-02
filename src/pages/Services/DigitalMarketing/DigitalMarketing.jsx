@@ -17,7 +17,7 @@ const DigitalMarketing = () => {
         />
         <meta
           name="keywords"
-          content="digital marketing services for business, "
+          content="digital marketing services for business, SEO services India, PPC advertising, social media marketing, content marketing, lead generation services, performance marketing"
         />
       </Helmet>
       <Header />
