@@ -1047,6 +1047,10 @@ body {
     }
 }
 
+.contact-form-wrapper{
+    padding-top:40px;
+}
+
 .contact-form input[type="checkbox"] {
     width: 16px !important;    
     height: 16px !important;   
