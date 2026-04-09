@@ -8,7 +8,6 @@ import NetworkBackground from './NetworkBackground'
 import './Landing.css'
 import microsoft from '../../assets/images/microsoft.png'
 import zoho from '../../assets/images/zoho.png'
-import shopify from '../../assets/images/shopify.png'
 import odoo from '../../assets/images/odoo.png'
 
 const services = [
@@ -276,7 +275,6 @@ export default function Landing() {
           >
             <img src={microsoft} alt="Microsoft" />
             <img src={zoho} alt="Zoho" />
-            <img src={shopify} alt="Shopify" />
             <img src={odoo} alt="Odoo" />
           </motion.div>
         </div>
