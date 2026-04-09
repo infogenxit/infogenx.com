@@ -143,6 +143,7 @@ const products = [
 
 export default function Landing() {
   const navigate = useNavigate()
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [formData, setFormData] = React.useState({
     lastName: '',
     businessEmail: '',
@@ -177,20 +178,47 @@ export default function Landing() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you! We will contact you soon.')
-    setFormData({
-      lastName: '',
-      businessEmail: '',
-      companyName: '',
-      designation: '',
-      organisationSize: '',
-      businessObjective: '',
-      techStack: [],
-      transformationBudget: '',
-      message: '',
-      phone: '+61 ',
-    })
+    setIsSubmitting(true)
+
+    try {
+      const form = document.createElement('form')
+      form.method = 'POST'
+      form.action =
+        'https://forms.zohopublic.in/infogenx1/form/LeadCapture/formperma/XMx0IxKOfb-jzTS5sYys24DSyw1QMOeIwm-4IXybPtI/htmlRecords/submit'
+
+      const addField = (name, value) => {
+        const input = document.createElement('input')
+        input.type = 'hidden'
+        input.name = name
+        input.value = value || ''
+        form.appendChild(input)
+      }
+
+      const fullName = formData.lastName.trim()
+      let firstName = 'User'
+      let lastName = 'User'
+
+      if (fullName) {
+        const parts = fullName.split(/\s+/)
+        firstName = parts[0]
+        lastName = parts.length > 1 ? parts.slice(1).join(' ') : parts[0]
+      }
+
+      addField('Name_First', firstName)
+      addField('Name_Last', lastName)
+      addField('SingleLine', formData.companyName)
+      addField('Email', formData.businessEmail)
+      addField('MultiLine', formData.message)
+      addField('PhoneNumber_countrycode', formData.phone)
+      addField('zf_redirect_url', 'https://infogenx.com/')
+
+      document.body.appendChild(form)
+      form.submit()
+    } catch (error) {
+      console.error(error)
+      alert('Submission failed')
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -962,6 +990,7 @@ export default function Landing() {
               <motion.button
                 type="submit"
                 className="landing-form-submit"
+                disabled={isSubmitting}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -969,7 +998,7 @@ export default function Landing() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                REQUEST STRATEGY BRIEFING
+                {isSubmitting ? 'Processing...' : 'REQUEST STRATEGY BRIEFING'}
               </motion.button>
             </form>
           </motion.div>
