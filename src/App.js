@@ -38,6 +38,7 @@ import CustomerRelation from "./pages/Products/CustomerRelation/CustomerRelation
 import Career from "./pages/Careers/Careers";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions/TermsConditions";
+import Landing from "./pages/Landing/Landing";
 import "./App.css";
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/landing" element={<Landing />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/careers" element={<Career />} />
