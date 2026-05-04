@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./GetinTouchNew.css";
 import Header from "../../../components/header/Header";
 import Footer from "../../../components/Footer/Footer";
@@ -8,7 +9,18 @@ import australiaFlag from "../../../assets/images/australia-flags.png";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa6";
+
+/** Must match `contactformzoho.html` (Zoho export) — do not rename fields. */
+const ZOHO_CONTACTUS_SUBMIT_URL =
+  "https://forms.zohopublic.in/infogenxprivatelimited1/form/ContactUs/formperma/swlzQv4WOiaDG1SDRx3_1N7T17S9SQfTFt2q6N6Qy6U/htmlRecords/submit";
+
+/** Target for Zoho POST so the SPA does not navigate away (thank-you + redirect work). */
+const ZOHO_SUBMIT_IFRAME_NAME = "zohoContactSubmitFrame";
+
 const GetinTouch = () => {
+  const navigate = useNavigate();
+  const homeRedirectTimerRef = useRef(null);
+
   const [formData, setFormData] = useState({
     lastName: "",
     businessEmail: "",
@@ -24,6 +36,30 @@ const GetinTouch = () => {
   });
   const [showThankYou, setShowThankYou] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const clearHomeRedirectTimer = () => {
+    if (homeRedirectTimerRef.current) {
+      clearTimeout(homeRedirectTimerRef.current);
+      homeRedirectTimerRef.current = null;
+    }
+  };
+
+  const goHome = () => {
+    clearHomeRedirectTimer();
+    navigate("/");
+  };
+
+  useEffect(() => {
+    if (!showThankYou) return undefined;
+    clearHomeRedirectTimer();
+    homeRedirectTimerRef.current = setTimeout(() => {
+      homeRedirectTimerRef.current = null;
+      navigate("/");
+    }, 3500);
+    return () => {
+      clearHomeRedirectTimer();
+    };
+  }, [showThankYou, navigate]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -46,177 +82,74 @@ const GetinTouch = () => {
     }
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-
-  //   try {
-  //     // Submit to Odoo CRM
-  //     const odooResponse = await fetch(
-  //       "https://igxerp.infogenx.com/form/submit",
-  //       {
-  //         method: "POST",
-  //         body: JSON.stringify({
-  //           name: formData.name,
-  //           phone: formData.contactNumber,
-  //           email: formData.email,
-  //           "entry.720479336": formData.location,
-  //           "entry.505898934": formData.desiredService,
-  //           message: formData.message,
-  //         }),
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //       },
-  //     );
-
-  //     const data = await odooResponse.json();
-  //     console.log("Odoo submission successful:", data);
-
-  //     // Submit to Google Forms
-  //     const googleFormUrl =
-  //       "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyVw9o6-iQW88bgzL96jD6KHesu3V-J-QkOJQAKRYwVCDj0A/formResponse";
-  //     const params = new URLSearchParams();
-  //     params.append("entry.1583188992", formData.name);
-  //     params.append("entry.59106495", formData.contactNumber);
-  //     params.append("entry.1507836294", formData.email);
-  //     params.append("entry.1678940442", formData.location);
-  //     params.append("entry.645797029", formData.desiredService);
-  //     params.append("entry.2000705636", formData.message);
-
-  //     await fetch(googleFormUrl, {
-  //       method: "POST",
-  //       mode: "no-cors",
-  //       body: params,
-  //     });
-
-  //     console.log("Google Form submission successful");
-
-  //     // Show thank you message
-  //     setShowThankYou(true);
-
-  //     // Reset form
-  //     setFormData({
-  //       name: "",
-  //       contactNumber: "",
-  //       email: "",
-  //       location: "",
-  //       desiredService: "",
-  //       message: "",
-  //     });
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //     alert("An error occurred. Please try again.");
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
-  //Zoho form submission previous code
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-
-  //   try {
-  //     const form = document.createElement("form");
-  //     form.method = "POST";
-  //     form.action = "https://forms.zohopublic.in/infogenx1/form/LeadCapture/formperma/CcIH7B-_oYaljs3VNp0Ys4XIscoeYjf8-kybAtqQ_gY/htmlRecords/submit";
-  //     form.acceptCharset = "UTF-8";
-
-  //     const fields = {
-  //       xnQsjsdp:
-  //         "af3cd41b6fd1aa90e4cec5492096c20a4411ab7cf9ab23d4f6ae4a8643797cd9",
-  //       xmIwtLD:
-  //         "1b4554fa9405e9208d337cd1c20b7f3adfb42ead74dc2ee63873bdc69ba330e92386b33d783c8612d3e84405828f035f",
-  //       actionType: "TGVhZHM=",
-  //       // returnURL: "https://infogenx.com/contact-us",
-  //       //localhost
-  //       returnURL: "http://localhost:3000/contact-us",
-  //     };
-
-  //     Object.entries(fields).forEach(([name, value]) => {
-  //       const input = document.createElement("input");
-  //       input.type = "hidden";
-  //       input.name = name;
-  //       input.value = value;
-  //       form.appendChild(input);
-  //     });
-
-  //     document.body.appendChild(form);
-  //     form.submit();
-
-  //     // Show thank you message
-  //     // setShowThankYou(true);
-
-  //     // Reset form state correctly
-  //     setFormData({
-  //       lastName: "",
-  //       businessEmail: "",
-  //       companyName: "",
-  //       designation: "",
-  //       organisationSize: "",
-  //       businessObjective: "",
-  //       primaryTech: "",
-  //       techStack: [],
-  //       transformationBudget: "",
-  //       message: "",
-  //       phone: "",
-  //     });
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //     alert("An error occurred. Please try again.");
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
 
 
-  //Zoho form submission new code
+  // Zoho ContactUs — same fields as the embedded form; UI stays React/CSS.
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-  
+
     try {
       const form = document.createElement("form");
       form.method = "POST";
-      form.action =
-        "https://forms.zohopublic.in/infogenx1/form/LeadCapture/formperma/XMx0IxKOfb-jzTS5sYys24DSyw1QMOeIwm-4IXybPtI/htmlRecords/submit";
-  
+      form.action = ZOHO_CONTACTUS_SUBMIT_URL;
+      form.acceptCharset = "UTF-8";
+      form.enctype = "multipart/form-data";
+
       const addField = (name, value) => {
         const input = document.createElement("input");
         input.type = "hidden";
         input.name = name;
-        input.value = value || "";
+        input.value = value ?? "";
         form.appendChild(input);
       };
-  
-      // ✅ NAME FIX (important)
+
+      addField("zf_referrer_name", typeof document !== "undefined" ? document.referrer || "" : "");
+      addField("zf_redirect_url", "https://infogenx.com/contact-us");
+      addField("zc_gad", "");
+
       const fullName = formData.lastName.trim();
-      let firstName = "User";
-      let lastName = "User";
-  
-      if (fullName) {
-        const parts = fullName.split(/\s+/);
+      const parts = fullName.split(/\s+/).filter(Boolean);
+      let firstName = "";
+      let lastName = "";
+      if (parts.length) {
         firstName = parts[0];
         lastName = parts.length > 1 ? parts.slice(1).join(" ") : parts[0];
       }
-  
+
       addField("Name_First", firstName);
       addField("Name_Last", lastName);
-  
-      // ✅ CORRECT FIELD NAMES
+      addField("PhoneNumber_countrycode", formData.phone.trim());
       addField("SingleLine", formData.companyName);
       addField("Email", formData.businessEmail);
+      addField("Dropdown", formData.organisationSize);
+      addField("Dropdown1", formData.businessObjective);
+      addField("Dropdown2", formData.designation);
+      addField("Dropdown3", formData.transformationBudget);
+      (formData.techStack || []).forEach((tech) => addField("Checkbox", tech));
       addField("MultiLine", formData.message);
-  
-      // ✅ PHONE (Zoho only expects this ONE field in your form)
-      addField("PhoneNumber_countrycode", formData.phone);
-  
-      // ✅ REDIRECT
-      addField("zf_redirect_url", "https://infogenx.com/");
-  
+
+      form.target = ZOHO_SUBMIT_IFRAME_NAME;
       document.body.appendChild(form);
       form.submit();
-  
+      setTimeout(() => {
+        if (form.parentNode) form.parentNode.removeChild(form);
+      }, 2000);
+
+      setFormData({
+        lastName: "",
+        businessEmail: "",
+        companyName: "",
+        designation: "",
+        organisationSize: "",
+        businessObjective: "",
+        primaryTech: "",
+        techStack: [],
+        transformationBudget: "",
+        message: "",
+        phone: "+61 ",
+      });
+      setShowThankYou(true);
     } catch (error) {
       console.error(error);
       alert("Submission failed");
@@ -226,6 +159,11 @@ const GetinTouch = () => {
   };
   return (
     <>
+      <iframe
+        title="Zoho form submit"
+        name={ZOHO_SUBMIT_IFRAME_NAME}
+        className="zoho-submit-hidden-frame"
+      />
       <Helmet>
         <title>Contact Infogenx | Get AI & IT Solutions Today</title>
         <meta
@@ -371,9 +309,9 @@ const GetinTouch = () => {
                         Estimated Transformation Budget (AUD) *
                       </option>
                       <option value="Under $100k">Under $100k</option>
-                      <option value="$100k-$250k">$100k – $250k</option>
-                      <option value="$250k-$500k">$250k – $500k</option>
-                      <option value="$500k+">$500k+</option>
+                      <option value="$100k - $250k">$100k – $250k</option>
+                      <option value="$250 - $500k">$250k – $500k</option>
+                      <option value="$500k">$500k+</option>
                     </select>
                   </div>
                   <div className="tech-stack-container">
@@ -429,18 +367,7 @@ const GetinTouch = () => {
                 </button>
               </form>
             </div>
-          ) : (
-            <div className="thank-you-message">
-              <h3>Thank You!</h3>
-              <p>
-                Your message has been successfully submitted. We'll get back to
-                you soon!
-              </p>
-              <button onClick={() => setShowThankYou(false)}>
-                Submit Another Message
-              </button>
-            </div>
-          )}
+          ) : null}
         </div>
         {/* COLUMN 3 (Right): Fast Facts & AI Insights */}
         <div className="side-content right-facts">
@@ -636,6 +563,40 @@ const GetinTouch = () => {
           </div>
         </div>
       </div>
+      {showThankYou && (
+        <div
+          className="contact-thankyou-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="contact-thankyou-title"
+        >
+          <div className="contact-thankyou-modal thank-you-message">
+            <h3 id="contact-thankyou-title">Thank you!</h3>
+            <p>
+              Your message has been submitted successfully. We&apos;ll get back
+              to you soon.
+            </p>
+            <p className="contact-thankyou-sub">
+              You&apos;ll be taken to the home page in a few seconds.
+            </p>
+            <div className="contact-thankyou-actions">
+              <button type="button" className="submit-btn" onClick={goHome}>
+                Go to home
+              </button>
+              <button
+                type="button"
+                className="contact-thankyou-secondary"
+                onClick={() => {
+                  clearHomeRedirectTimer();
+                  setShowThankYou(false);
+                }}
+              >
+                Submit another message
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <Footer />
     </>
   );
