@@ -64,7 +64,7 @@ const Expertise = () => {
           </h2>
 
           <p className="expertise-description">
-            Infogenx helps Australian organisations modernise how work gets done. 
+            Infogenx helps organisations modernise how work gets done. 
             We design and build scalable applications, intelligent automation,
             and analytics that connect your systems, reduce friction, and give leaders clearer visibility.
           </p>

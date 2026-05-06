@@ -45,7 +45,7 @@ const AboutHero = () => {
         {/* Right content */}
         <div className="about-hero-right">
           <p>
-            Infogenx helps small Australian Small Business Enterprise operations with AI-enabled 
+            Infogenx helps small Business Enterprise operations with AI-enabled 
             applications, automation, and analytics across Microsoft, Zoho, and Odoo - delivering connected, 
             scalable solutions that reduce complexity, improve visibility, and drive smarter decisions with real business impact.
           </p>
