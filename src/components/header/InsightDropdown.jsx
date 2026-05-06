@@ -10,6 +10,12 @@ const PlatformsDropdown = ({ closeMenu }) => {
             <h4>Blog</h4>
           </div>
         </Link>
+
+        <Link to="/insights/case-studies" onClick={closeMenu}>
+          <div className="service-info">
+            <h4>Case Studies</h4>
+          </div>
+        </Link>
       </div>
     </div>
   );

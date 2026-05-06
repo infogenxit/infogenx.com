@@ -5,22 +5,26 @@ import AboutWhyChoose from "../../components/About/AboutWhyChoose/AboutWhyChoose
 import AboutMissionVision from "../../components/About/AboutMissionVision/AboutMissionVision";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
+import SEO from "../../components/SEO/SEO";
 const About = () => {
   return (
     <>
-      <Helmet>
-        <title>
-        About Infogenx | AI & Software Development Experts
-        </title>
+      <SEO
+        title="About Infogenx | AI & Software Development Experts"
+        description="Learn how Infogenx delivers AI, automation, and software solutions to help businesses innovate, scale, and succeed globally."
+        keywords="software development company, AI company, IT consulting, tech company, digital transformation partner"
+      />
+      {/* <Helmet>
+        <title>About Infogenx | Australian IT Consulting & Engineering Firm</title>
         <meta
           name="description"
-          content="Learn how Infogenx delivers AI, automation, and software solutions to help businesses innovate, scale, and succeed globally."
+          content="Learn about Infogenx—our story, leadership, partnerships, and mission to deliver intelligent, outcome-driven digital solutions for businesses."
         />
         <meta
           name="keywords"
-          content="software development company, AI company, IT consulting, tech company, digital transformation partner"
+          content="about Infogenx, Australian IT consulting company, digital engineering firm"
         />
-      </Helmet>
+      </Helmet> */}
       <Header />
       <AboutHero />
       <AboutWhoWeAre />

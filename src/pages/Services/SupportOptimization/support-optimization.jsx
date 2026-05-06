@@ -6,20 +6,26 @@ import AppDevBusinessImpact from "../../../components/Services/SupportOptimizati
 import AppDevImpactCTA from "../../../components/Services/SupportOptimization/SupportImpactCTA/SupportImpactCTA";
 import Footer from "../../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
-const ApplicationDev = () => {
+import SEO from "../../../components/SEO/SEO";
+const SupportOptimization = () => {
   return (
     <>
-      <Helmet>
-        <title>IT Support & System Optimization Services | Infogenx</title>
+      <SEO
+        title="IT Support & Continuous Optimization Services | Infogenx"
+        description="Infogenx helps businesses resolve issues faster and continuously optimise systems through structured support and performance reporting."
+        keywords="IT support Australia, system optimisation, performance monitoring"
+      />
+      {/* <Helmet>
+        <title>IT Support & Continuous Optimization Services | Infogenx</title>
         <meta
           name="description"
-          content="Keep your systems running at peak performance with Infogenx support and optimization services. Improve speed, security, and reliability as you grow."
+          content="Infogenx helps businesses resolve issues faster and continuously optimise systems through structured support and performance reporting."
         />
         <meta
           name="keywords"
-          content="IT support and optimization services, application support services India, software performance optimization, ongoing IT support, system maintenance services, managed IT support"
+          content="IT support Australia, system optimisation, performance monitoring"
         />
-      </Helmet>
+      </Helmet> */}
       <Header />
       <AppDevHero />
       <AppDevExpertise />
@@ -31,4 +37,4 @@ const ApplicationDev = () => {
   );
 };
 
-export default ApplicationDev;
+export default SupportOptimization;

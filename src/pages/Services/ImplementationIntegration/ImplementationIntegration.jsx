@@ -6,20 +6,26 @@ import AppDevBusinessImpact from "../../../components/Services/ImplementIntegrat
 import AppDevImpactCTA from "../../../components/Services/ImplementIntegration/ImplementIntegrationImpactCTA/ImplementIntegrationImpactCTA";
 import Footer from "../../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
-const ApplicationDev = () => {
+import SEO from "../../../components/SEO/SEO";
+const ImplementationIntegration = () => {
   return (
     <>
-      <Helmet>
-        <title>Implementation & Integration Services | Infogenx</title>
+      <SEO
+        title="Technology Implementation & System Integration | Infogenx"
+        description="Infogenx provides end-to-end technology implementation and integration services to ensure reliable deployment and seamless platform connectivity."
+        keywords="system implementation services, platform integration Australia"
+      />
+      {/* <Helmet>
+        <title>Technology Implementation & System Integration | Infogenx</title>
         <meta
           name="description"
-          content="Seamlessly implement and integrate your systems with Infogenx. We connect apps, automate workflows, and ensure smooth data flow across your business."
+          content="Infogenx provides end-to-end technology implementation and integration services to ensure reliable deployment and seamless platform connectivity."
         />
         <meta
           name="keywords"
-          content="software implementation and integration services, ERP implementation India, system integration services, API integration consulting, enterprise software integration, IT implementation partner"
+          content="system implementation services, platform integration Australia"
         />
-      </Helmet>
+      </Helmet> */}
       <Header />
       <AppDevHero />
       <AppDevExpertise />
@@ -31,4 +37,4 @@ const ApplicationDev = () => {
   );
 };
 
-export default ApplicationDev;
+export default ImplementationIntegration;

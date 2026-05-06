@@ -2,20 +2,26 @@ import "./Careers.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
-const Career = () => {
+import SEO from "../../components/SEO/SEO";
+const Careers = () => {
   return (
     <div>
-      <Helmet>
-        <title>Careers at Infogenx | Join Our Tech Team</title>
+      <SEO
+        title="Careers at Infogenx | Jobs & Opportunities at Infogenx"
+        description="Explore career opportunities at Infogenx. Join our team of developers, designers, and digital experts to build innovative web and software solutions."
+        keywords="Infogenx careers, web development jobs, software company jobs, IT jobs India, React developer jobs"
+      />
+      {/* <Helmet>
+        <title>Careers at Infogenx | Jobs & Opportunities at Infogenx</title>
         <meta
           name="description"
-          content="Explore career opportunities at Infogenx and work on AI, automation, and software development projects with a global team."
+          content="Explore career opportunities at Infogenx. Join our team of developers, designers, and digital experts to build innovative web and software solutions."
         />
         <meta
           name="keywords"
-          content="Infogenx careers, IT jobs, software jobs, AI jobs, tech careers"
+          content="Infogenx careers, web development jobs, software company jobs, IT jobs India, React developer jobs"
         />
-      </Helmet>
+      </Helmet> */}
       <Header />
       <div className="career-page">
         <h1>Careers at Infogenx</h1>
@@ -28,4 +34,4 @@ const Career = () => {
   );
 };
 
-export default Career;
+export default Careers;

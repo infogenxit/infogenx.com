@@ -53,7 +53,12 @@ const Footer = () => {
               <li>
                 <Link to="/about">About Us</Link>
               </li>
-
+              {/* <li>
+                <Link to="/services">Services</Link>
+              </li>
+              <li>
+                <Link to="/industries">Industries</Link>
+              </li> */}
               <li>
                 <Link to="/careers">Careers</Link>
               </li>
@@ -93,6 +98,11 @@ const Footer = () => {
               <li>
                 <Link to="/services/digital-marketing">Digital Marketing</Link>
               </li>
+              {/* <li>
+                <Link to="/services/process-automation">
+                  Process Automation
+                </Link>
+              </li> */}
             </ul>
           </div>
 
@@ -124,6 +134,9 @@ const Footer = () => {
                   Integration & API Enablement
                 </Link>
               </li>
+              {/* <li>
+                <Link to="/solutions/worlflow">Workflow Optimisation</Link>
+              </li> */}
             </ul>
           </div>
 
@@ -139,6 +152,15 @@ const Footer = () => {
               <li>
                 <Link to="/platforms/odoo">Odoo Solutions</Link>
               </li>
+              {/* <li>
+                <Link to="/platforms/power">Power Platform</Link>
+              </li>
+              <li>
+                <Link to="/platforms/zoho">Zoho Creator</Link>
+              </li>
+              <li>
+                <Link to="/platforms/Azure">Azure AI</Link>
+              </li> */}
             </ul>
           </div>
 

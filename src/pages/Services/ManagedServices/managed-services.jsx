@@ -6,20 +6,28 @@ import AppDevBusinessImpact from "../../../components/Services/ManagedServices/M
 import AppDevImpactCTA from "../../../components/Services/ManagedServices/ManagedServicesImpactCTA/ManagedServicesImpactCTA";
 import Footer from "../../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
-const ApplicationDev = () => {
+import SEO from "../../../components/SEO/SEO";
+const ManagedServices = () => {
   return (
     <>
-      <Helmet>
-        <title>Managed IT Services for Growing Businesses | Infogenx</title>
+      <SEO
+        title="Managed IT Services & Ongoing Support | Infogenx Australia"
+        description="Ensure performance, security, and reliability with Infogenx’s managed services, proactive monitoring, and SLA-driven IT support."
+        keywords="managed IT services Australia, IT support and maintenance"
+      />
+      {/* <Helmet>
+        <title>
+          Managed IT Services & Ongoing Support | Infogenx Australia
+        </title>
         <meta
           name="description"
-          content="Outsource your IT operations to Infogenx. We handle monitoring, maintenance, and support so your systems stay secure, scalable, and always running."
+          content="Ensure performance, security, and reliability with Infogenx’s managed services, proactive monitoring, and SLA-driven IT support."
         />
         <meta
           name="keywords"
-          content="managed IT services India, managed services provider India, outsourced IT management, cloud managed services, IT operations support, proactive IT monitoring"
+          content="managed IT services Australia, IT support and maintenance"
         />
-      </Helmet>
+      </Helmet> */}
       <Header />
       <AppDevHero />
       <AppDevExpertise />
@@ -31,4 +39,4 @@ const ApplicationDev = () => {
   );
 };
 
-export default ApplicationDev;
+export default ManagedServices;
