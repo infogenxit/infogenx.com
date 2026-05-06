@@ -64,7 +64,7 @@ const Expertise = () => {
           </h2>
 
           <p className="expertise-description">
-            Infogenx helps organisations modernise how work gets done. 
+            Infogenx helps organisations globally modernise how work gets done. 
             We design and build scalable applications, intelligent automation,
             and analytics that connect your systems, reduce friction, and give leaders clearer visibility.
           </p>
@@ -78,7 +78,7 @@ const Expertise = () => {
               and support sustainable business growth.
 
             </p>
-            <img src={card1} alt="" />
+            <img src={card1} alt="Scalable Digital Solutions for businesses worldwide" />
           </div>
 
           <div className="expertise-card center-card">
@@ -88,7 +88,7 @@ const Expertise = () => {
               and keep operations running more accurately.
 
             </p>
-            <img src={card2} alt="" />
+            <img src={card2} alt="Intelligent Workflow Automation and AI Solutions" />
           </div>
 
           <div className="expertise-card last-card">
@@ -97,7 +97,7 @@ const Expertise = () => {
               We turn fragmented business data into actionable intelligence that supports faster,
               more confident decision-making.
             </p>
-            <img src={card3} alt="" />
+            <img src={card3} alt="Actionable Business Intelligence and Data Analytics" />
           </div>
         </div>
       </div>

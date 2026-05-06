@@ -3,6 +3,7 @@ import AboutHero from "../../components/About/AboutHero/AboutHero";
 import AboutWhoWeAre from "../../components/About/AboutWhoWeAre/AboutWhoWeAre";
 import AboutWhyChoose from "../../components/About/AboutWhyChoose/AboutWhyChoose";
 import AboutMissionVision from "../../components/About/AboutMissionVision/AboutMissionVision";
+import AboutTeam from "../../components/About/AboutTeam/AboutTeam";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import SEO from "../../components/SEO/SEO";
@@ -10,9 +11,9 @@ const About = () => {
   return (
     <>
       <SEO
-        title="About Infogenx | AI & Software Development Experts"
-        description="Learn how Infogenx delivers AI, automation, and software solutions to help businesses innovate, scale, and succeed globally."
-        keywords="software development company, AI company, IT consulting, tech company, digital transformation partner"
+        title="About Infogenx | AI Automation & App Development Experts Australia"
+        description="Learn how Infogenx empowers businesses with AI-enabled applications, intelligent automation, and data analytics across Microsoft, Zoho, and Odoo ecosystem."
+        keywords="about Infogenx, AI automation experts Australia, app development company Brisbane, digital engineering team"
       />
       {/* <Helmet>
         <title>About Infogenx | Australian IT Consulting & Engineering Firm</title>
@@ -30,6 +31,7 @@ const About = () => {
       <AboutWhoWeAre />
       <AboutWhyChoose />
       <AboutMissionVision />
+      <AboutTeam />
       <Footer />
     </>
   );

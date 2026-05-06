@@ -1,13 +1,15 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollTop/ScrollToTop";
+import GtmPageViewTracker from "./components/analytics/GtmPageViewTracker";
 import RouteSeo from "./components/SEO/RouteSeo";
+import { Link } from "react-router-dom";
+import "./StickyContact.css";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Products from "./pages/Products/Products";
 import Contact from "./pages/Contact/Contact";
-/*import GetinTouch from "./pages/Contact/GetinTouch/GetinTouch";*/
 import GetinTouchNew from "./pages/Contact/GetinTouchNew/GetinTouchNew";
 import GlobalLocations from "./pages/Contact/GlobalLocations/GlobalLocations";
 import ImplementationIntegration from "./pages/Services/ImplementationIntegration/ImplementationIntegration";
@@ -42,11 +44,23 @@ import IgxStock from "./pages/Products/IGXStock/IgxStock";
 import OdooErp from "./pages/Products/OdooErp/OdooErp";
 import RetailPos from "./pages/Products/RetailPos/RetailPos";
 import CustomerRelation from "./pages/Products/CustomerRelation/CustomerRelation";
+// import Career from "./pages/Careers/Careers";
 import Careers from "./pages/Careers/Careers";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions/TermsConditions";
-import Landing from "./pages/Landing/Landing";
 import "./App.css";
+
+const StickyContact = () => {
+  return (
+    <div className="sticky-mobile-contact">
+      <Link to="/contact-us">Contact Us</Link>
+      <a href={`tel:${(process.env.REACT_APP_CONTACT_PHONE || '+61 403 331 910').replace(/\s+/g, '')}`}>
+        Call Now
+      </a>
+    </div>
+  );
+};
+
 
 function App() {
   useEffect(() => {
@@ -68,11 +82,16 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <GtmPageViewTracker />
         <RouteSeo />
+        <StickyContact />
         <ScrollToTop />
         <Routes>
+          {/* <Route
+            path="/contact-us/get-in-touch"
+            element={<Navigate to="/contact-us" replace />}
+          /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/landing" element={<Landing />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/request-quote" element={<RequestQuote />} />
@@ -195,6 +214,7 @@ function App() {
           <Route path="/industries/e-commerce" element={<ECommerce />} />
           <Route path="/industries/finance" element={<Finance />} />
           
+          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>

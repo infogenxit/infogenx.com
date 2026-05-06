@@ -23,7 +23,7 @@ const SEO = ({
   robots = "INDEX, FOLLOW",
   ogTitle,
   ogDescription,
-  ogImage = "https://infogenx.com/infogenx-og-image.png",
+  ogImage = "https://infogenx.com.au/infogenx-og-image.png",
   ogUrl,
   ogType = "website",
 }) => {

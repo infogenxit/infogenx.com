@@ -9,8 +9,9 @@ const AboutHero = () => {
       className="about-hero"
       style={{ backgroundImage: `url(${aboutHeroBg})` }}
     >
+      {/* Original alt: alt="corner accent" */}
       <img
-        alt="corner accent"
+        alt="Infogenx Australia - AI Automation & App Development Corner Graphic"
         className="about-corner-accent"
         src={AboutCornerAccent}
       ></img>
@@ -20,9 +21,8 @@ const AboutHero = () => {
         {/* Left content */}
         <div className="about-hero-left">
           <h1>
-            {/* Modernizing Australian Business with Intelligent Engineering. */}
-            About InfogenX <br />
-            
+            {/* About InfogenX */}
+            About InfogenX | AI Automation & App Development Australia
           </h1>
 
           <div className="about-hero-buttons">
@@ -45,7 +45,7 @@ const AboutHero = () => {
         {/* Right content */}
         <div className="about-hero-right">
           <p>
-            Infogenx helps small Business Enterprise operations with AI-enabled 
+            Infogenx helps small Australian Small Business Enterprise operations with AI-enabled 
             applications, automation, and analytics across Microsoft, Zoho, and Odoo - delivering connected, 
             scalable solutions that reduce complexity, improve visibility, and drive smarter decisions with real business impact.
           </p>

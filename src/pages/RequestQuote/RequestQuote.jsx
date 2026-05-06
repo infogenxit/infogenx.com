@@ -83,18 +83,18 @@ const RequestQuote = () => {
     <>
       <SEO
         title="Contact Infogenx | Book an AI & Automation Call"
-        description="Get in touch with Infogenx to discuss your digital transformation goals, request a demo, or book an Australian-led strategy consultation."
-        keywords="contact AI & Automation Australia company, IT strategy call Australia"
+        description="Get in touch with Infogenx to discuss your digital transformation goals, request a demo, or book an Expert-led strategy consultation."
+        keywords="contact AI & Automation company, IT strategy call Australia"
       />
       {/* <Helmet>
         <title>Contact Infogenx | Book an AI & Automation Call</title>
         <meta
           name="description"
-          content="Get in touch with Infogenx to discuss your digital transformation goals, request a demo, or book an Australian-led strategy consultation."
+          content="Get in touch with Infogenx to discuss your digital transformation goals, request a demo, or book an Expert-led strategy consultation."
         />
         <meta
           name="keywords"
-          content="contact AI & Automation Australia company, IT strategy call Australia"
+          content="contact AI & Automation company, IT strategy call Australia"
         />
       </Helmet> */}
       <Header />
