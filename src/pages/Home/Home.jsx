@@ -8,34 +8,28 @@ import CtaBanner from "../../components/Home/CtaBanner/CtaBanner";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import SEO from "../../components/SEO/SEO";
+
 const Home = () => {
   return (
     <>
-      {/* Original title: AI Automation & App Development Company Sydney | Infogenx */}
-      <SEO
-        title="AI Automation & App Development Company in Australia | Infogenx"
-        description="Infogenx is a leading AI automation and application development company in Australia. We deliver intelligent apps, workflow automation, and data analytics for Microsoft, Zoho, and Odoo."
-        keywords="AI application development Australia, AI automation company Brisbane, intelligent business automation, app development services Melbourne"
-      />
       {/* 
-        PREVIOUS REGIONAL SEO (Preserved as comments):
-        title: "AI Automation & App Development Company Sydney | Infogenx"
-        keywords: "AI application development Sydney, AI automation company Brisbane, app development Melbourne"
+        RESTORED CODE: Previous Regional SEO (ACTIVE)
       */}
-      {/* <Helmet>
-        <title>
-          AI Automation & Application Development Company in Australia |
-          Infogenx
-        </title>
-        <meta
-          name="description"
-          content="Infogenx is an Australian AI automation and application development company delivering intelligent apps, workflow automation, and analytics using Microsoft, Zoho, and Odoo."
+      <SEO
+        title="AI Automation & App Development Company Sydney | Infogenx"
+        description="Infogenx is a leading AI automation and application development company in Sydney. We deliver intelligent apps, workflow automation, and data analytics."
+        keywords="AI application development Sydney, AI automation company Brisbane, app development Melbourne"
+      />
+
+      {/* 
+        CURRENT SYNC CODE: Australia-wide SEO (COMMENTED)
+        <SEO
+          title="AI Automation & App Development Company in Australia | Infogenx"
+          description="Infogenx is a leading AI automation and application development company in Australia. We deliver intelligent apps, workflow automation, and data analytics for Microsoft, Zoho, and Odoo."
+          keywords="AI application development Australia, AI automation company Brisbane, intelligent business automation, app development services Melbourne"
         />
-        <meta
-          name="keywords"
-          content="AI application development Australia, AI-enabled business applications, intelligent automation Australia, application modernisation services"
-        />
-      </Helmet> */}
+      */}
+
       <Header />
       <Hero />
       <Expertise />

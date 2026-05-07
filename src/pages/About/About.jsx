@@ -7,30 +7,28 @@ import AboutTeam from "../../components/About/AboutTeam/AboutTeam";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import SEO from "../../components/SEO/SEO";
+
 const About = () => {
   return (
     <>
-      <SEO
-        title="About Infogenx | AI Automation & App Development Experts Australia"
-        description="Learn how Infogenx empowers businesses with AI-enabled applications, intelligent automation, and data analytics across Microsoft, Zoho, and Odoo ecosystem."
-        keywords="about Infogenx, AI automation experts Australia, app development company Brisbane, digital engineering team"
-      />
       {/* 
-        PREVIOUS REGIONAL SEO (Preserved as comments):
-        title: "About Infogenx | Australian IT Consulting & Engineering Firm"
-        keywords: "about Infogenx, Australian IT consulting company, digital engineering firm"
+        RESTORED CODE: Previous Regional SEO (ACTIVE)
       */}
-      {/* <Helmet>
-        <title>About Infogenx | Australian IT Consulting & Engineering Firm</title>
-        <meta
-          name="description"
-          content="Learn about Infogenx—our story, leadership, partnerships, and mission to deliver intelligent, outcome-driven digital solutions for businesses."
+      <SEO
+        title="About Infogenx | Australian IT Consulting & Engineering Firm"
+        description="Learn about Infogenx—our story, leadership, partnerships, and mission to deliver intelligent, outcome-driven digital solutions for businesses."
+        keywords="about Infogenx, Australian IT consulting company, digital engineering firm"
+      />
+
+      {/* 
+        CURRENT SYNC CODE: Australia-wide SEO (COMMENTED)
+        <SEO
+          title="About Infogenx | AI Automation & App Development Experts Australia"
+          description="Learn how Infogenx empowers businesses with AI-enabled applications, intelligent automation, and data analytics across Microsoft, Zoho, and Odoo ecosystem."
+          keywords="about Infogenx, AI automation experts Australia, app development company Brisbane, digital engineering team"
         />
-        <meta
-          name="keywords"
-          content="about Infogenx, Australian IT consulting company, digital engineering firm"
-        />
-      </Helmet> */}
+      */}
+
       <Header />
       <AboutHero />
       <AboutWhoWeAre />
