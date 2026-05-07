@@ -128,8 +128,7 @@ const GetinTouch = () => {
       // Local state update for thank you message
       setShowThankYou(true);
     } catch (error) {
-      console.error(error);
-      alert("Submission failed");
+      console.error("Submission error:", error);
     } finally {
       setIsSubmitting(false);
     }
