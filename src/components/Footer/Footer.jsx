@@ -18,7 +18,7 @@ const Footer = () => {
             <img src={Footerlogo} alt="Infogenx" />
             <p>
               AI-enabled applications, intelligent automation, and analytics
-              solutions built to help Australian businesses simplify operations,
+              solutions built to help Global businesses simplify operations,
               connect systems, and scale with confidence.
             </p>
           </div>

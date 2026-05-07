@@ -17,6 +17,11 @@ const Home = () => {
         description="Infogenx is a leading AI automation and application development company in Australia. We deliver intelligent apps, workflow automation, and data analytics for Microsoft, Zoho, and Odoo."
         keywords="AI application development Australia, AI automation company Brisbane, intelligent business automation, app development services Melbourne"
       />
+      {/* 
+        PREVIOUS REGIONAL SEO (Preserved as comments):
+        title: "AI Automation & App Development Company Sydney | Infogenx"
+        keywords: "AI application development Sydney, AI automation company Brisbane, app development Melbourne"
+      */}
       {/* <Helmet>
         <title>
           AI Automation & Application Development Company in Australia |

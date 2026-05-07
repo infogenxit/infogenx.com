@@ -15,6 +15,11 @@ const About = () => {
         description="Learn how Infogenx empowers businesses with AI-enabled applications, intelligent automation, and data analytics across Microsoft, Zoho, and Odoo ecosystem."
         keywords="about Infogenx, AI automation experts Australia, app development company Brisbane, digital engineering team"
       />
+      {/* 
+        PREVIOUS REGIONAL SEO (Preserved as comments):
+        title: "About Infogenx | Australian IT Consulting & Engineering Firm"
+        keywords: "about Infogenx, Australian IT consulting company, digital engineering firm"
+      */}
       {/* <Helmet>
         <title>About Infogenx | Australian IT Consulting & Engineering Firm</title>
         <meta
