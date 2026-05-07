@@ -20,7 +20,7 @@ const ZOHO_CONTACTUS_SUBMIT_URL_CURRENT = "https://forms.zohopublic.in/infogenxp
 const ZOHO_SUBMIT_IFRAME_NAME = "zohoContactSubmitFrame";
 */
 
-const GetinTouch = () => {
+const GetinTouchNew = () => {
   const navigate = useNavigate();
   const homeRedirectTimerRef = useRef(null);
 
