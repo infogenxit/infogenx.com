@@ -1,32 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://infogenx.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://infogenx.com/about</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/services/implementation-integration</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/services/managed-services</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/services/consulting-advisory</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/services/support-optimization</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/services/digital-marketing</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/solutions/intelligent-automation</loc><priority>0.9</priority></url>
-  <url><loc>https://infogenx.com/solutions/data-analytics-ai</loc><priority>0.9</priority></url>
-  <url><loc>https://infogenx.com/solutions/digital-transformation</loc><priority>0.9</priority></url>
-  <url><loc>https://infogenx.com/solutions/api-integration</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/solutions/modern-applications</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/platforms/microsoft</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/platforms/zoho</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/platforms/odoo</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/industries/healthcare-solutions</loc><priority>0.7</priority></url>
-  <url><loc>https://infogenx.com/industries/retail-solutions</loc><priority>0.7</priority></url>
-  <url><loc>https://infogenx.com/industries/manufacturing-solutions</loc><priority>0.7</priority></url>
-  <url><loc>https://infogenx.com/industries/finance-solutions</loc><priority>0.7</priority></url>
-  <url><loc>https://infogenx.com/industries/transport-logistics</loc><priority>0.7</priority></url>
-  <url><loc>https://infogenx.com/products</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/products/stock-management-system</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/products/odoo-erp-management-system</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/products/retail-pos-management-system</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/products/customer-relationship-management-system</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/contact-us</loc><priority>0.8</priority></url>
-  <url><loc>https://infogenx.com/careers</loc><priority>0.5</priority></url>
-  <url><loc>https://infogenx.com/privacy-policy</loc><priority>0.3</priority></url>
-  <url><loc>https://infogenx.com/terms-conditions</loc><priority>0.3</priority></url>
+
+  <!-- MAIN PAGES -->
+  <url>
+    <loc>https://infogenx.com/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/about/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/products/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/request-quote/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/careers/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/contact-us/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/portfolio/</loc>
+  </url>
+
+  <!-- LEGAL PAGES -->
+  <url>
+    <loc>https://infogenx.com/privacy-policy/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/terms-conditions/</loc>
+  </url>
+
+  <!-- SERVICES -->
+  <url>
+    <loc>https://infogenx.com/services/implementation-integration/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/services/managed-services/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/services/consulting-advisory/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/services/support-optimization/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/services/digital-marketing/</loc>
+  </url>
+
+  <!-- SOLUTIONS -->
+  <url>
+    <loc>https://infogenx.com/solutions/digital-transformation/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/solutions/intelligent-automation/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/solutions/modern-applications/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/solutions/data-analytics-ai/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/solutions/api-integration/</loc>
+  </url>
+
+  <!-- TECHNOLOGIES -->
+  <url>
+    <loc>https://infogenx.com/technologies/web-development/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/technologies/mobile-app-development/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/technologies/artificial-intelligence/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/technologies/data-engineering-analytics/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/technologies/cloud-computing/</loc>
+  </url>
+
+  <!-- INDUSTRIES -->
+  <url>
+    <loc>https://infogenx.com/industries/healthcare-solutions/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/industries/retail-solutions/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/industries/manufacturing-solutions/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/industries/transport-logistics/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/industries/e-commerce-solutions/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/industries/finance-solutions/</loc>
+  </url>
+
+  <!-- PRODUCTS -->
+  <url>
+    <loc>https://infogenx.com/products/igx-stock-management-system/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/products/odoo-erp-implementation/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/products/retail-pos-system/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/products/customer-relationship-management-system/</loc>
+  </url>
+
+  <!-- INSIGHTS -->
+  <url>
+    <loc>https://infogenx.com/insights/case-studies/</loc>
+  </url>
+
+  <!-- CONTACT SUB PAGES -->
+  <url>
+    <loc>https://infogenx.com/contact-us/get-in-touch/</loc>
+  </url>
+  <url>
+    <loc>https://infogenx.com/contact-us/global-locations/</loc>
+  </url>
+
 </urlset>
