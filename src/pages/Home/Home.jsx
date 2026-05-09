@@ -1,11 +1,9 @@
-import Header from "../../sections/header/Header";
 import Hero from "../../sections/Home/Hero/Hero";
 import Expertise from "../../sections/Home/Expertise/Expertise";
 import ServiceHighlight from "../../sections/Home/ServiceHighlight/ServiceHighlight";
 import TechSlider from "../../sections/Home/TechSlider/TechSlider";
 import Testimonials from "../../sections/Home/Testimonials/Testimonials";
 import CtaBanner from "../../sections/Home/CtaBanner/CtaBanner";
-import Footer from "../../sections/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import SEO from "../../components/SEO/SEO";
 
@@ -50,7 +48,6 @@ const Home = () => {
         keywords="IT consulting Brisbane, IT solutions Brisbane, AI automation Australia, digital transformation Brisbane, Infogenx"
       />
 
-      <Header />
       <Hero />
       <Expertise />
       <ServiceHighlight />
@@ -58,7 +55,6 @@ const Home = () => {
       <Testimonials />
       <CtaBanner />
       <ServiceFaq faqs={faqs} />
-      <Footer />
     </>
   );
 };

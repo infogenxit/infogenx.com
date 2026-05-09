@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./GetinTouchNew.css";
-import Header from "../../../sections/header/Header";
-import Footer from "../../../sections/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import indiaFlag from "../../../assets/images/india-flag.png";
 import australiaFlag from "../../../assets/images/australia-flags.png";
@@ -218,7 +216,6 @@ const GetinTouchNew = () => {
           content="contact Infogenx, IT consultation, software services inquiry, AI solutions contact"
         />
       </Helmet>
-      <Header />
       <div className="page-intro-header container">
         <style>
           {`
@@ -468,7 +465,6 @@ const GetinTouchNew = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

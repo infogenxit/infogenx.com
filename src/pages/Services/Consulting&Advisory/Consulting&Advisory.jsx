@@ -1,10 +1,8 @@
-import Header from "../../../sections/header/Header";
 import AppDevHero from "../../../sections/Services/ConsultingAdvisory/ConsultingHero/ConsultingHero";
 import AppDevExpertise from "../../../sections/Services/ConsultingAdvisory/ConsultingExpertise/ConsultingExpertise";
 import AppDevApproach from "../../../sections/Services/ConsultingAdvisory/ConsultingAppDev/ConsultingAppDev";
 import AppDevBusinessImpact from "../../../sections/Services/ConsultingAdvisory/ConsultingBusinessImpact/ConsultingBusinessImpact";
 // import AppDevImpactCTA from "../../../components/Analytics/AppDevImpactCTA/AppDevImpactCTA";
-import Footer from "../../../sections/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import SEO from "../../../components/SEO/SEO";
 import Breadcrumbs from "../../../sections/Common/Breadcrumbs/Breadcrumbs";
@@ -72,7 +70,6 @@ const ConsultingAdvisory = () => {
           content="AI & Automation Consulting Australia, technology advisory, digital strategy consulting"
         />
       </Helmet> */}
-      <Header />
       <Breadcrumbs />
       <AppDevHero />
       <AppDevExpertise />
@@ -81,7 +78,6 @@ const ConsultingAdvisory = () => {
       <ServiceFaq faqs={faqs} />
       <RelatedServices items={relatedItems} />
       {/* <AppDevImpactCTA /> */}
-      <Footer />
     </>
   );
 };

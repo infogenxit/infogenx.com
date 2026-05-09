@@ -2,8 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import Header from '../../sections/header/Header'
-import Footer from '../../sections/Footer/Footer'
 import NetworkBackground from './NetworkBackground'
 import './Landing.css'
 import microsoft from '../../assets/images/microsoft.png'
@@ -234,7 +232,6 @@ export default function Landing() {
         />
       </Helmet>
 
-      <Header />
 
       {/* Hero Section */}
       <section className="landing-hero">
@@ -1003,7 +1000,6 @@ export default function Landing() {
         </div>
       </section>
 
-      <Footer />
     </>
   )
 }

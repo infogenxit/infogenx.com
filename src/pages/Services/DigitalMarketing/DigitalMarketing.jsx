@@ -1,10 +1,8 @@
-import Header from "../../../sections/header/Header";
 import AppDevHero from "../../../sections/Services/DigitalMarketing/DigitalMarketingHero/DigitalMarketingHero";
 import AppDevExpertise from "../../../sections/Services/DigitalMarketing/DigitalMarketingExpertise/DigitalMarketingExpertise";
 import AppDevApproach from "../../../sections/Services/DigitalMarketing/DigitalMarketingApproach/DigitalMarketingApproach";
 import AppDevBusinessImpact from "../../../sections/Services/DigitalMarketing/DigitalMarketingBusinessImpact/DigitalMarketingBusinessImpact";
 import AppDevImpactCTA from "../../../sections/Services/DigitalMarketing/DigitalMarketingImpactCTA/DigitalMarketingImpactCTA";
-import Footer from "../../../sections/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import SEO from "../../../components/SEO/SEO";
 import Breadcrumbs from "../../../sections/Common/Breadcrumbs/Breadcrumbs";
@@ -70,7 +68,6 @@ const DigitalMarketing = () => {
           content="digital marketing Australia, online marketing services"
         />
       </Helmet> */}
-      <Header />
       <Breadcrumbs />
       <AppDevHero />
       <AppDevExpertise />
@@ -79,7 +76,6 @@ const DigitalMarketing = () => {
       <AppDevImpactCTA />
       <ServiceFaq faqs={faqs} />
       <RelatedServices items={relatedItems} />
-      <Footer />
     </>
   );
 };
