@@ -4,9 +4,7 @@ import ServiceHighlight from "../../sections/Home/ServiceHighlight/ServiceHighli
 import TechSlider from "../../sections/Home/TechSlider/TechSlider";
 import Testimonials from "../../sections/Home/Testimonials/Testimonials";
 import CtaBanner from "../../sections/Home/CtaBanner/CtaBanner";
-import { Helmet } from "react-helmet-async";
 import SEO from "../../components/SEO/SEO";
-
 import ServiceFaq from "../../sections/Common/ServiceFaq/ServiceFaq";
 
 const Home = () => {
@@ -32,21 +30,9 @@ const Home = () => {
       answer: "Yes. We specialise in integrations and building extensions for platforms like Zoho, Microsoft, and Odoo, ensuring everything works together seamlessly."
     }
   ];
+
   return (
     <>
-      {/* 
-        PREVIOUS SEO (COMMENTED OUT):
-        <SEO
-          title="AI Automation & App Development Company Sydney | Infogenx"
-          description="Infogenx is a leading AI automation and application development company in Sydney. We deliver intelligent apps, workflow automation, and data analytics."
-          keywords="AI application development Sydney, AI automation company Brisbane, app development Melbourne"
-        />
-      */}
-      <SEO
-        title="Brisbane's Trusted IT Consulting Partner — From Strategy to Scale"
-        description="Future-driven IT consulting in Brisbane. We partner with local businesses to solve operational problems through AI automation, app development, and data analytics."
-        keywords="IT consulting Brisbane, IT solutions Brisbane, AI automation Australia, digital transformation Brisbane, Infogenx"
-      />
 
       <Hero />
       <Expertise />

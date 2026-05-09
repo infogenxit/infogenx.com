@@ -7,6 +7,5 @@ export const SITE_CONFIG = {
   },
   socials: {
     linkedin: "https://www.linkedin.com/company/infogenx",
-    // add more as needed
   },
 };

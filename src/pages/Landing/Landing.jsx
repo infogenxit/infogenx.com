@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import NetworkBackground from './NetworkBackground'
 import './Landing.css'
-import microsoft from '../../assets/images/microsoft.png'
-import zoho from '../../assets/images/zoho.png'
-import odoo from '../../assets/images/odoo.png'
+import microsoft from '../../assets/images/microsoft.webp'
+import zoho from '../../assets/images/zoho.webp'
+import odoo from '../../assets/images/odoo.webp'
 
 const services = [
   {

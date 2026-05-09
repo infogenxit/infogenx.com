@@ -2,23 +2,20 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./GetinTouchNew.css";
 import { Helmet } from "react-helmet-async";
-import indiaFlag from "../../../assets/images/india-flag.png";
-import australiaFlag from "../../../assets/images/australia-flags.png";
+import indiaFlag from "../../../assets/images/india-flag.webp";
+import australiaFlag from "../../../assets/images/australia-flags.webp";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa6";
 
-/** 
- * RESTORED CODE: Original Zoho URL (LeadCapture)
- * CURRENT CODE (Commented): New Zoho URL (ContactUs)
- */
-const ZOHO_CONTACTUS_SUBMIT_URL_RESTORED = "https://forms.zohopublic.in/infogenx1/form/LeadCapture/formperma/XMx0IxKOfb-jzTS5sYys24DSyw1QMOeIwm-4IXybPtI/htmlRecords/submit";
-/* 
-const ZOHO_CONTACTUS_SUBMIT_URL_CURRENT = "https://forms.zohopublic.in/infogenxprivatelimited1/form/ContactUs/formperma/swlzQv4WOiaDG1SDRx3_1N7T17S9SQfTFt2q6N6Qy6U/htmlRecords/submit";
-const ZOHO_SUBMIT_IFRAME_NAME = "zohoContactSubmitFrame";
-*/
+/** Must match `contactformzoho.html` (Zoho export) — do not rename fields. */
+const ZOHO_CONTACTUS_SUBMIT_URL =
+  "https://forms.zohopublic.in/infogenxprivatelimited1/form/ContactUs/formperma/swlzQv4WOiaDG1SDRx3_1N7T17S9SQfTFt2q6N6Qy6U/htmlRecords/submit";
 
-const GetinTouchNew = () => {
+/** Target for Zoho POST so the SPA does not navigate away (thank-you + redirect work). */
+const ZOHO_SUBMIT_IFRAME_NAME = "zohoContactSubmitFrame";
+
+const GetinTouch = () => {
   const navigate = useNavigate();
   const homeRedirectTimerRef = useRef(null);
 
@@ -33,7 +30,7 @@ const GetinTouchNew = () => {
     techStack: [],
     transformationBudget: "",
     message: "",
-    phone: process.env.REACT_APP_PHONE_PREFIX || "+91 ",
+    phone: process.env.REACT_APP_PHONE_PREFIX || "+61 ",
   });
   const [showThankYou, setShowThankYou] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,34 +63,41 @@ const GetinTouchNew = () => {
     const { name, value, type, checked } = e.target;
 
     if (type === "checkbox") {
+      // Handle the Technology Stack array
       setFormData((prev) => {
         const currentStack = prev.techStack || [];
         const newStack = checked
-          ? [...currentStack, value]
+          ? [...currentStack, value] // Add if checked
           : currentStack.filter((item) => item !== value);
         return { ...prev, techStack: newStack };
       });
     } else {
+      // Handle standard inputs and dropdowns
       setFormData((prev) => ({
         ...prev,
         [name]: value,
-        ...(name === 'phone' && value === '' ? { phone: process.env.REACT_APP_PHONE_PREFIX || '+91 ' } : {})
+        // If the name is 'phone' and the value is empty, reset to the prefix
+        ...(name === 'phone' && value === '' ? { phone: process.env.REACT_APP_PHONE_PREFIX || '+61 ' } : {})
       }));
     }
   };
 
-  // ============================================================
-  // RESTORED CODE: User's Manual Submission Logic (ACTIVE)
-  // ============================================================
-  const handleSubmit = (e) => {
+
+
+  /* 
+  // ==========================================
+  // LEGACY ZOHO SUBMISSION (LeadCapture Form)
+  // Restored as comments for reference - Do not remove
+  // ==========================================
+  const handleSubmitLegacy = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-  
+
     try {
       const form = document.createElement("form");
       form.method = "POST";
-      form.action = ZOHO_CONTACTUS_SUBMIT_URL_RESTORED;
-  
+      form.action = "https://forms.zohopublic.in/infogenx1/form/LeadCapture/formperma/XMx0IxKOfb-jzTS5sYys24DSyw1QMOeIwm-4IXybPtI/htmlRecords/submit";
+
       const addField = (name, value) => {
         const input = document.createElement("input");
         input.type = "hidden";
@@ -101,49 +105,44 @@ const GetinTouchNew = () => {
         input.value = value || "";
         form.appendChild(input);
       };
-  
+
       const fullName = formData.lastName.trim();
       let firstName = "User";
       let lastName = "User";
-  
       if (fullName) {
         const parts = fullName.split(/\s+/);
         firstName = parts[0];
         lastName = parts.length > 1 ? parts.slice(1).join(" ") : parts[0];
       }
-  
+
       addField("Name_First", firstName);
       addField("Name_Last", lastName);
       addField("SingleLine", formData.companyName);
       addField("Email", formData.businessEmail);
       addField("MultiLine", formData.message);
       addField("PhoneNumber_countrycode", formData.phone);
-      addField("zf_redirect_url", "https://infogenx.com/");
-  
+      addField("zf_redirect_url", "https://dev.infogenx.com/");
+
       document.body.appendChild(form);
       form.submit();
-      
-      // Local state update for thank you message
-      setShowThankYou(true);
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error(error);
     } finally {
       setIsSubmitting(false);
     }
   };
+  // ==========================================
+  */
 
-  /* 
-  // ============================================================
-  // CURRENT CODE: AI Synced Logic (COMMENTED)
-  // ============================================================
-  const handleSubmitAI = (e) => {
+  // Zoho ContactUs — same fields as the embedded form; UI stays React/CSS.
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
       const form = document.createElement("form");
       form.method = "POST";
-      form.action = ZOHO_CONTACTUS_SUBMIT_URL_CURRENT;
+      form.action = ZOHO_CONTACTUS_SUBMIT_URL;
       form.acceptCharset = "UTF-8";
       form.enctype = "multipart/form-data";
 
@@ -156,7 +155,7 @@ const GetinTouchNew = () => {
       };
 
       addField("zf_referrer_name", typeof document !== "undefined" ? document.referrer || "" : "");
-      addField("zf_redirect_url", `${process.env.REACT_APP_SITE_URL || "https://infogenx.com"}/contact-us`);
+      addField("zf_redirect_url", `${process.env.REACT_APP_SITE_URL || "https://dev.infogenx.com"}/contact-us`);
       addField("zc_gad", "");
 
       const fullName = formData.lastName.trim();
@@ -187,24 +186,33 @@ const GetinTouchNew = () => {
         if (form.parentNode) form.parentNode.removeChild(form);
       }, 2000);
 
+      setFormData({
+        lastName: "",
+        businessEmail: "",
+        companyName: "",
+        designation: "",
+        organisationSize: "",
+        businessObjective: "",
+        primaryTech: "",
+        techStack: [],
+        transformationBudget: "",
+        message: "",
+        phone: process.env.REACT_APP_PHONE_PREFIX || "+61 ",
+      });
       setShowThankYou(true);
     } catch (error) {
-      console.error(error);
+      console.error("Submission error:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
-  */
-
   return (
     <>
-      {/* 
       <iframe
         title="Zoho form submit"
         name={ZOHO_SUBMIT_IFRAME_NAME}
         className="zoho-submit-hidden-frame"
-      /> 
-      */}
+      />
       <Helmet>
         <title>Contact Infogenx | Get AI & IT Solutions Today</title>
         <meta
@@ -222,10 +230,15 @@ const GetinTouchNew = () => {
       div.page-intro-header.container h1.main-headline {
         font-size: 28px !important;
       }
+      @media (max-width: 1024px) {
+        div.page-intro-header.container h1.main-headline {
+          font-size: 28px !important;
+        }
+      }
     `}
         </style>
         <h1 className="main-headline">
-          ORCHESTRATE GROWTH:STRATEGIC AI INTEGRATION FOR MODERN ECOSYSTEMS
+          Contact Infogenx Brisbane – Expert IT Consulting & AI Solutions
         </h1>
         <p className="intro-subtext">
           Partner with Infogenx to architect high-yield, AI-integrated roadmaps
@@ -253,7 +266,7 @@ const GetinTouchNew = () => {
                   />
                   <div className="phone-input-wrapper">
                     <img
-                      src={process.env.REACT_APP_FLAG_ICON || "https://flagcdn.com/w40/in.png"}
+                      src={process.env.REACT_APP_FLAG_ICON || "https://flagcdn.com/w40/au.png"}
                       alt="Flag"
                       className="flag-icon"
                     />
@@ -382,6 +395,7 @@ const GetinTouchNew = () => {
                     </div>
                   </div>
                 </div>
+                {/* Message - Full Width */}
                 <textarea
                   rows="4"
                   name="message"
@@ -401,71 +415,237 @@ const GetinTouchNew = () => {
                 </button>
               </form>
             </div>
-          ) : (
-            /* RESTORED CODE: Inline Thank You Message (ACTIVE) */
-            <div className="thank-you-message">
-              <h3>Thank You!</h3>
-              <p>
-                Your message has been successfully submitted. We'll get back to
-                you soon!
-              </p>
-              <button onClick={() => setShowThankYou(false)}>
-                Submit Another Message
-              </button>
-            </div>
-          )}
+          ) : null}
         </div>
+        {/* COLUMN 3 (Right): Fast Facts & AI Insights */}
         <div className="side-content right-facts">
           <div className="fact-card">
             <h4>Fast Facts</h4>
+
             <p className="mini-heading">Why Leaders Engage Us</p>
+
             <ul>
-              <li><strong>Cross-Border Capability:</strong> Integrated delivery teams across Australia and India ensuring 24/7 operational continuity.</li>
-              <li><strong>High-Yield Architecture:</strong> Specializing in $100k–$500k+ enterprise transformations that prioritize ROI over simple automation.</li>
-              <li><strong>Ecosystem Neutrality:</strong> Expert-level integration across Microsoft, Zoho, Shopify, and Odoo to eliminate data silos.</li>
+              <li>
+                <strong>Cross-Border Capability:</strong> Integrated delivery
+                teams across Australia and India ensuring 24/7 operational
+                continuity.
+              </li>
+              <li>
+                <strong>High-Yield Architecture:</strong> Specializing in
+                $100k–$500k+ enterprise transformations that prioritize ROI over
+                simple automation.
+              </li>
+              <li>
+                <strong>Ecosystem Neutrality:</strong> Expert-level integration
+                across Microsoft, Zoho, Shopify, and Odoo to eliminate data
+                silos.
+              </li>
             </ul>
           </div>
 
           <div className="did-you-know-card">
             <h4>Did you know?</h4>
-            <p>Enterprises that fail to integrate AI by 2026 face 30% higher cost-of-capital...</p>
-            <p className="highlight-text">We don't just automate tasks; we optimize your valuation.</p>
+            <p>
+              Enterprises that fail to integrate AI... face a 30% higher
+              cost-of-capital...
+            </p>
+            <p className="highlight-text">
+              We don't just automate tasks; we optimize your valuation.
+            </p>
           </div>
           <div className="nda-shield-box">
             <span className="shield-icon">🛡️</span>
-            <p>All strategy briefings are conducted under strict NDA protocols.</p>
+            <p>
+              All strategy briefings are conducted under strict NDA protocols.
+            </p>
+          </div>
+        </div>{" "}
+        {/* Closing side-content */}
+      </div>{" "}
+      {/* Closing quote-main-layout - THIS WAS LIKELY MISSING OR MISPLACED */}
+      {/*Locatios */}
+      <div className="global-locations-container">
+        <h2>Global Locations</h2>
+        <div className="global-locations">
+          <div className="location-box">
+            <div className="location-box-header">
+              <img src={indiaFlag} alt="India Flag" className="flag-icon" />
+              <h3>India Office</h3>
+            </div>
+            <p>
+              <FaLocationDot /> &nbsp; Spaces Olympia, 10th Floor, Citius A
+              Block, Phase 1, Plot No. 1, Sidco Industrial Estate, Guindy,
+              Chennai, Tamil Nadu 600032
+            </p>
+            <p>
+              <FaPhone /> &nbsp; +91 9787806366
+            </p>
+            <p>
+              {" "}
+              <FaEnvelope /> &nbsp;{" "}
+              <a
+                href="mailto:reachus@infogenx.com"
+                style={{ color: "#00123C", textDecoration: "none" }}
+              >
+                reachus@infogenx.com
+              </a>
+            </p>
+          </div>
+
+          <div className="location-box">
+            <div className="location-box-header">
+              <img
+                src={australiaFlag}
+                alt="Australia Flag"
+                className="flag-icon"
+              />
+              <h3>Australia Office</h3>
+            </div>
+            <p>
+              <FaLocationDot /> &nbsp; 17 View Street, Mount Gravatt East,
+              Brisbane, Queensland, Upper Mount Gravatt QLD 4122, Australia
+            </p>
+            <p>
+              <FaPhone /> &nbsp; +61 403339424{" "}
+            </p>
+            <p>
+              {" "}
+              <FaEnvelope /> &nbsp;{" "}
+              <a
+                href="mailto:reachus@infogenx.com"
+                style={{ color: "#00123C", textDecoration: "none" }}
+              >
+                reachus@infogenx.com
+              </a>
+            </p>
           </div>
         </div>
       </div>
-      
       <div className="global-delivery-section">
+        {/* 1. Background Map */}
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg"
           alt="Global Delivery Map"
           className="global-map-bg"
         />
-        <svg className="map-connection-svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
-          <path d="M 690 205 Q 760 250, 860 360" stroke="#F36B2A" strokeWidth="2" fill="none" strokeDasharray="6,6" markerEnd="url(#arrowhead)" />
-          <circle cx="690" cy="205" r="5" fill="#F36B2A" />
+
+        <svg
+          className="map-connection-svg"
+          viewBox="0 0 1000 500"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <filter
+              id="glow-effect"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+            >
+              <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            {/* Arrowhead Marker Definition */}
+            <marker
+              id="arrowhead"
+              markerWidth="10"
+              markerHeight="7"
+              refX="8"
+              refY="3.5"
+              orient="auto"
+            >
+              <polygon points="0 0, 10 3.5, 0 7" fill="#F36B2A" />
+            </marker>
+          </defs>
+
+          {/* 🔥 PATH: Adjusted up and left to hit the Indian landmass (Chennai) */}
+          <path
+            d="M 690 205 Q 760 250, 860 360"
+            stroke="#F36B2A"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="6,6"
+            strokeLinecap="round"
+            opacity="0.8"
+            markerEnd="url(#arrowhead)"
+          />
+
+          {/* 🔴 Dot: Moved to X=690, Y=205 (Chennai, India) */}
+          <circle
+            cx="690"
+            cy="205"
+            r="5"
+            fill="#F36B2A"
+            filter="url(#glow-effect)"
+          />
         </svg>
+        {/* 3. Text Content */}
         <div className="global-content">
-          <h2 className="global-title">GLOBAL DELIVERY. LOCAL ACCOUNTABILITY.</h2>
-          <p className="global-subtitle">Seamless integration across borders.</p>
+          <h2 className="global-title">
+            GLOBAL DELIVERY. LOCAL ACCOUNTABILITY.
+          </h2>
+          <p className="global-subtitle">
+            Seamless integration across borders.
+          </p>
+
           <div className="insight-box">
+            {/* Opening Quote */}
             <span className="quote-icon-left">“</span>
+
             <h5>AI COST-OF-CAPITAL INSIGHT BLOCK</h5>
             <p>
-              Enterprises that fail to integrate AI by 2026 face 30% higher cost-of-capital.
+              Enterprises that fail to integrate AI by 2026 face 30% higher
+              cost-of-capital.
               <br />
               <span style={{ color: "#F36B2A", fontWeight: "700" }}>
                 We don't just automate tasks, we optimize your valuation.
               </span>
             </p>
+
+            {/* 🔥 Closing Quote (Added) */}
             <span className="quote-icon-right">”</span>
           </div>
         </div>
       </div>
+      {showThankYou && (
+        <div
+          className="contact-thankyou-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="contact-thankyou-title"
+        >
+          <div className="contact-thankyou-modal thank-you-message">
+            <h3 id="contact-thankyou-title">Thank you!</h3>
+            <p>
+              Your message has been submitted successfully. We&apos;ll get back
+              to you soon.
+            </p>
+            <p className="contact-thankyou-sub">
+              You&apos;ll be taken to the home page in a few seconds.
+            </p>
+            <div className="contact-thankyou-actions">
+              <button type="button" className="submit-btn" onClick={goHome}>
+                Go to home
+              </button>
+              <button
+                type="button"
+                className="contact-thankyou-secondary"
+                onClick={() => {
+                  clearHomeRedirectTimer();
+                  setShowThankYou(false);
+                }}
+              >
+                Submit another message
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
-export default GetinTouchNew;
+export default GetinTouch;
