@@ -22,7 +22,7 @@ const Expertise = () => {
         return;
       }
       const rect = section.getBoundingClientRect();
-      const viewportCenter = window.innerHeight / 25;
+      const viewportCenter = window.innerHeight / 2;
       if (rect.top < viewportCenter) {
         const scrollPastCenter = viewportCenter - rect.top;
         cards.forEach((card, index) => {
@@ -45,7 +45,7 @@ const Expertise = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <section className="expertise-section" ref={sectionRef}>
+    <section className="expertise-section" ref={sectionRef} style={{ marginTop: "-100px" }}>
       <div className="expertise-container">
         <div className="expertise-content">
           <h2 className="expertise-heading">

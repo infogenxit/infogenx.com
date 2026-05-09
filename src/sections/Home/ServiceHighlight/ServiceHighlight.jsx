@@ -72,7 +72,7 @@ const ServiceHighlight = () => {
     <section
       className="service-section"
       ref={sectionRef}
-      style={{ height: `${services.length * 100}vh` }}
+      style={{ height: `${services.length * 85}vh` }}
     >
       <div className="service-sticky">
         {/* <div
@@ -112,19 +112,25 @@ const ServiceHighlight = () => {
           </div>
         </div> */}
         <div className="service-stack">
-          {services.slice(0, activeIndex + 1).map((item, i) => {
+          {services.map((item, i) => {
             const isActive = i === activeIndex;
+            const isPast = i < activeIndex;
+            const isFuture = i > activeIndex;
             const stackOffset = activeIndex - i;
             return (
               <div
                 key={i}
-                className={`service-card ${isActive ? "active" : "stacked"}`}
+                className={`service-card ${isActive ? "active" : isPast ? "stacked" : "future"}`}
                 style={{
                   background: item.background,
-                  transform: `
-            translateY(-${stackOffset * 35}px)
-          `,
-                  zIndex: 100 - stackOffset,
+                  transform: isActive 
+                    ? "translateY(0)" 
+                    : isPast 
+                      ? `translateY(-${stackOffset * 35}px)` 
+                      : "translateY(0px)",
+                  opacity: isFuture ? 0 : 1,
+                  zIndex: 100 - i,
+                  visibility: isFuture ? "hidden" : "visible",
                 }}
               >
                 <div className="service-content">
