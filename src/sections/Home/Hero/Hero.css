@@ -1,22 +1,21 @@
-.hero {
-    position: relative;
-    min-height: 150vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background: none;
-    /* background-color: #fff0eb60; */
-}
 
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    /* background: rgba(255, 255, 255, 0.65); */
-    /* light overlay */
-    z-index: -1;
-}
-
+ .hero {
+     position: relative;
+     min-height: 150vh;
+     display: flex;
+     align-items: center;
+     overflow: hidden;
+     background: none;
+     /* background-color: #fff0eb60; */
+ }
+ .hero::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     /* background: rgba(255, 255, 255, 0.65); */
+     /* light overlay */
+     z-index: -1;
+ }
 .hero-video {
     position: absolute;
     top: 50%;
@@ -29,7 +28,6 @@
     transform: translate(-50%, -50%);
     z-index: -2;
 }
-
 .hero-container {
     max-width: 1280px;
     margin: 0 auto;
@@ -71,10 +69,9 @@
     color: #00123C;
     /* background color converted to text color */
 }
-
-.hero-subheading span {
+.hero-subheading span{
     text-decoration: underline;
-    text-decoration-color: #737373c0;
+    text-decoration-color:  #737373c0;
     text-underline-offset: 2px;
 }
 
@@ -128,23 +125,22 @@
             #eb632a 70%,
             #f36b2a 100%); */
 
-    background: conic-gradient(at 50% 0%,
-            #AC3300 0deg,
-            #EB632A 90deg,
-            #a53606 110deg,
-            #00123C 150deg,
-            #00123C 180deg);
+            background: conic-gradient(at 50% 0%,
+                        #AC3300 0deg,
+                        #EB632A 90deg,
+                        #a53606 110deg,
+                        #00123C 150deg,
+                        #00123C 180deg);
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-
+    
 }
-
 .primary-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
     border: 3px solid transparent;
     color: #00123C;
-    background-image:
+background-image:
         linear-gradient(#ffffff, #ffffff),
         linear-gradient(110deg,
             #081256 0%,
@@ -153,9 +149,8 @@
             #f36b2a 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
-
+    
 }
-
 .secondary-btn {
     /* width: 220px; */
     height: 50px;
@@ -190,20 +185,19 @@
 
     transition: all 0.2s ease;
 }
-
 .secondary-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
 }
 
-.hero-brands {
-    margin-top: 0;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.hero-brands{
+margin-top: 0;
+        align-items: center;
+        display: flex;
+        justify-content: center;
 }
 
-.hero-brands img {
+.hero-brands img{
     height: 50px;
     margin: 0 15px;
     object-fit: contain;
@@ -213,7 +207,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-
+    
 }
 
 .float-icon1 {
@@ -222,22 +216,19 @@
     height: 100px;
     opacity: 1;
 }
-
 .float-icon2 {
     position: absolute;
     width: 64px;
     height: 64px;
     opacity: 1;
-
+   
 }
-
 .float-icon3 {
     position: absolute;
     width: 64px;
     height: 64px;
     opacity: 1;
 }
-
 .float-icon4 {
     position: absolute;
     width: 50px;
@@ -263,7 +254,6 @@
 .float-vertical {
     animation: floatVertical 4s ease-in-out infinite;
 }
-
 @keyframes floatHorizontal {
     0% {
         transform: translateX(0);
@@ -364,11 +354,9 @@
 /* Responsive Design for mobile */
 @media (max-width: 768px) {
     .hero {
-        height: auto;
-        /* Allow section to grow with content */
+        height: auto; /* Allow section to grow with content */
         min-height: 100vh;
-        padding: 420px 0 60px;
-        /* Aggressive padding to clear header */
+        padding: 480px 0 60px; /* Extreme padding to clear header */
     }
 
     .hero-container {
@@ -410,22 +398,19 @@
     .hero-brands {
         margin-top: 40px;
         display: flex;
-        flex-direction: row;
-        /* Force row on mobile */
+        flex-direction: row; /* Force row on mobile */
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 25px;
         width: 100%;
-        padding-bottom: 40px;
-        /* Space at the bottom */
+        padding-bottom: 40px; /* Space at the bottom */
         position: relative;
         z-index: 5;
     }
 
     .hero-brands img {
-        height: 45px;
-        /* Bigger logos */
+        height: 45px; /* Bigger logos */
         width: auto;
         max-width: 120px;
         object-fit: contain;
@@ -453,8 +438,7 @@
     .hero-description {
         font-size: 15px;
     }
-
-    .hero-proof {
+    .hero-proof{
         font-size: 14px;
     }
 }
