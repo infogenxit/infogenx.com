@@ -8,7 +8,7 @@ const GlobalLocations = () => {
     <>
       <SEO
         title="Get in Touch for AI Automation Solutions - Infogenx IT Services | Australia | India"
-        description="Get in touch with Infogenx to discuss how build customised AI-enabled applications, intelligent automation, and analytics solutions for businesses worldwide across Microsoft, Zoho, Shopify, and Odoo platforms."
+        description="Get in touch with Infogenx to discuss how build customised AI-enabled applications, intelligent automation, and analytics solutions for Australian businesses across Microsoft, Zoho, Shopify, and Odoo platforms."
         keywords="Get in touch AI Automation,Platform specialists,Business enablement,Decision intelligence, AI & Automation Consulting, Digital Transformation Partner,Business Systems & AI Solutions, AI-Enabled Business Solutions,Automation & Analytics Consultin Platform-Focused Digital Solutions,AI consulting services,intelligent automation solutions, analytics consulting, what is intelligent automation, AI in business"
       />
       {/* <Helmet>
@@ -18,7 +18,7 @@ const GlobalLocations = () => {
         </title>
         <meta
           name="description"
-          content="Get in touch with Infogenx to discuss how build customised AI-enabled applications, intelligent automation, and analytics solutions for businesses worldwide across Microsoft, Zoho, Shopify, and Odoo platforms."
+          content="Get in touch with Infogenx to discuss how build customised AI-enabled applications, intelligent automation, and analytics solutions for Australian businesses across Microsoft, Zoho, Shopify, and Odoo platforms."
         />
         <meta
           name="keywords"
