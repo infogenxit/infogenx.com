@@ -194,7 +194,7 @@
     /* Image */
     .about-who-image img {
         border-radius: 12px;
-        height: 150px;
+        height: auto;
     }
 
     /* Bottom section */
@@ -219,6 +219,3 @@
         margin-top: 60px !important;
     }
 }
-
-
-
