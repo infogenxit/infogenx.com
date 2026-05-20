@@ -105,7 +105,7 @@
     color: #00123C !important;
     background: linear-gradient(#ffffff, #ffffff), linear-gradient(110deg, #081256 0%, #001b5e 35%, #eb632a 70%, #f36b2a 100%);
     background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background-clip: padding-box;
     border: 3px solid transparent;
 }
 

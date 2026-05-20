@@ -9,7 +9,7 @@
     margin: 0 auto;
     padding: 40px;
     /* Reduced bottom padding */
-    background: conic-gradient(at 50% 0%, #AC3300 0deg, #EB632A 90deg, #a53606 110deg, #00123C 175deg, #00123C 180deg);
+    background-image: conic-gradient(at 50% 0%, #AC3300 0deg, #EB632A 90deg, #a53606 110deg, #00123C 175deg, #00123C 180deg);
     border-radius: 28px;
     text-align: center;
     color: #ffffff;

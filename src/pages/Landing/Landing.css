@@ -491,9 +491,10 @@ select.landing-form-input {
     font-family: "Manrope", sans-serif;
     font-weight: 500;
     color: #000;
+    background-color: #ffffff;
     background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(110deg, #081256 0%, #081256 55%, #F36B2A 100%);
     background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background-clip: padding-box;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -502,7 +503,7 @@ select.landing-form-input {
 
 /* Select Dropdown Arrow */
 select.landing-form-input {
-    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23081256' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") right 18px center / 12px no-repeat;
+    background: #ffffff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"%3E%3Cpath fill="%23081256" d="M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z"/%3E%3C/svg%3E') right 18px center / 12px no-repeat;
     padding-right: 45px;
     cursor: pointer;
 }
@@ -520,9 +521,10 @@ select.landing-form-input {
 select.landing-form-input:focus {
     outline: none;
     border: 2px solid transparent;
+    background-color: #ffffff;
     background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(110deg, #011BDD 0%, #011BDD 55%, #EB632A 100%);
     background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background-clip: padding-box;
 }
 
 /* Textarea Specific */
@@ -669,7 +671,7 @@ select.landing-form-input:focus {
     color: #00123C;
     background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(110deg, #081256 0%, #001b5e 35%, #eb632a 70%, #f36b2a 100%);
     background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background-clip: padding-box;
 }
 
 .landing-secondary-btn {
@@ -687,7 +689,7 @@ select.landing-form-input:focus {
     border: 3px solid transparent;
     background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(110deg, #081256 0%, #001b5e 35%, #eb632a 70%, #f36b2a 100%);
     background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background-clip: padding-box;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
