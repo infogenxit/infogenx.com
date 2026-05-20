@@ -108,7 +108,7 @@
     transform: translateY(-5px) !important;
     background: linear-gradient(#00123c, #00123c), linear-gradient(90deg, #00123c 0%, #ff5e14 100%) !important;
     background-origin: border-box !important;
-    background-clip: padding-box, border-box !important;
+    background-clip: padding-box !important;
     border-color: transparent !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
 }
