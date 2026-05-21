@@ -121,7 +121,7 @@ const GetinTouch = () => {
       addField("Email", formData.businessEmail);
       addField("MultiLine", formData.message);
       addField("PhoneNumber_countrycode", formData.phone);
-      addField("zf_redirect_url", "https://dev.infogenx.com/");
+      addField("zf_redirect_url", "https://infogenx.com/");
 
       document.body.appendChild(form);
       form.submit();
@@ -155,7 +155,7 @@ const GetinTouch = () => {
       };
 
       addField("zf_referrer_name", typeof document !== "undefined" ? document.referrer || "" : "");
-      addField("zf_redirect_url", `${process.env.REACT_APP_SITE_URL || "https://dev.infogenx.com"}/contact-us`);
+      addField("zf_redirect_url", `${process.env.REACT_APP_SITE_URL || "https://infogenx.com"}/contact-us`);
       addField("zc_gad", "");
 
       const fullName = formData.lastName.trim();
