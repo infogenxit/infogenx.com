@@ -256,7 +256,7 @@
     flex-direction: column !important;
 }
 
-.igx-experience-card: hover .igx-icon-box::after {
+.igx-experience-card:hover .igx-icon-box::after {
     background: #f04b3f !important;
 }
 
@@ -266,7 +266,7 @@
     margin: 0 0 90px !important;
 }
 
-.igx-icon-box: :before {
+.igx-icon-box::before {
     width: 70px !important;
     height: 70px !important;
     background: #e74c3c !important;
@@ -282,7 +282,7 @@
     transform: translateX(-50%) !important;
 }
 
-.igx-icon-box: :after {
+.igx-icon-box::after {
     width: 70px !important;
     height: 70px !important;
     background: #444 !important;
@@ -302,7 +302,7 @@
     transition: all 0.3s ease-in-out !important;
 }
 
-.igx-icon-box: :after:hover {
+.igx-icon-box::after:hover {
     background: #f04b3f !important;
 }
 
@@ -465,7 +465,7 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
 }
 
-.igx-pricing-card: hover {
+.igx-pricing-card:hover {
     transform: scale(1.05) !important;
     transition: transform 0.3s ease-in-out !important;
 }
@@ -599,7 +599,7 @@
     font-weight: 500 !important;
 }
 
-.igx-footer-col a: hover {
+.igx-footer-col a:hover {
     color: #f04b3f !important;
 }
 
@@ -635,7 +635,7 @@
     transition: 0.3s !important;
 }
 
-.igx-social a: hover {
+.igx-social a:hover {
     background: #f04b3f !important;
     color: #fff !important;
 }
